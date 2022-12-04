@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace BusinessLayer {
-    public class Rental {
+    public class Rental : ICart {
         public Instrument Instrument { get; set; }
         public Customer Customer { get; set; }
         public Payment Payment { get; set; }
@@ -30,7 +30,7 @@ namespace BusinessLayer {
         public void cancelRental() {
 
         }
-        public void extendRetunTime(int month) {
+        public void extendReturnTime(int month) {
 
         }
         public void returnRental() {

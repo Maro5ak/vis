@@ -4,5 +4,23 @@
     <Compile Update="AccountManager.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="CartPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="InstrumentDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="InventoryUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="LoginOrRegister.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="LoginPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="RegisterPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
 </Project>

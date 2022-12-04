@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace BusinessLayer {
-    public class Order{
+    public class Order : ICart{
         public List<Instrument> OrderItems { get; set; }
         public Customer Customer { get; set; }
         public Payment Payment { get; set; }
