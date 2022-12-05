@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace BusinessLayer {
-    internal interface IActiveRecord<T> {
+    public interface IActiveRecord<T> {
         void Insert();
         void Update();
         void Delete();

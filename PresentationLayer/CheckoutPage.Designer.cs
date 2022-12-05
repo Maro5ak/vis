@@ -276,6 +276,7 @@
             this.logoBtn.Size = new System.Drawing.Size(75, 53);
             this.logoBtn.TabIndex = 14;
             this.logoBtn.UseVisualStyleBackColor = false;
+            this.logoBtn.Click += new System.EventHandler(this.logoBtn_Click);
             // 
             // cartBtn
             // 

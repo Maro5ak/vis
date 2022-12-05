@@ -1,1 +1,18 @@
-﻿
+﻿[12/5/2022 7:00:48 AM]: 1
+[12/5/2022 7:05:45 AM]: 1 Insert into order
+[12/5/2022 7:07:38 AM]: 1 Insert into order
+[12/5/2022 7:15:24 AM]: 1 Insert into order
+[12/5/2022 7:16:48 AM]: 1 Insert payment
+[12/5/2022 7:16:48 AM]: 1 Insert into order
+[12/5/2022 7:17:02 AM]: 1 Updated customer rows, no pw
+[12/5/2022 7:20:54 AM]: 1 Insert payment
+[12/5/2022 7:20:54 AM]: 1 Insert into order
+[12/5/2022 7:20:54 AM]: 1 Insert into ordered_items
+[12/5/2022 7:23:14 AM]: 1 Insert payment
+[12/5/2022 7:23:14 AM]: 1 Insert into rental
+[12/5/2022 7:23:14 AM]: 1 Insert payment
+[12/5/2022 7:23:14 AM]: 1 Insert into order
+[12/5/2022 7:28:58 AM]: 1 Insert payment
+[12/5/2022 7:29:01 AM]: 1 Insert into rental
+[12/5/2022 7:31:26 AM]: 1 Insert payment
+[12/5/2022 7:31:26 AM]: 1 Insert into rental

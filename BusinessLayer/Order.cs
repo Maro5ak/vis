@@ -28,7 +28,11 @@ namespace BusinessLayer {
 
         public void CreateOrder() {
             OrderTransactionScript.InsertOrder(Customer.Id, Payment.Id, Customer.Address);
+            foreach (var i in OrderItems)
+                OrderTransactionScript.InsertOrderItems(OrderTransactionScript.GetLastOrder(), i.Id);
         }
+
+
 
         public void CancelOrder() {
             OrderTransactionScript.RemoveOrder(Customer.Id, Payment.Id, Customer.Address);

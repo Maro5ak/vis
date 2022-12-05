@@ -81,6 +81,7 @@ namespace PresentationLayer {
                     break;
                 }
             }
+            priceSumLabel.Text = $"Summary: ${fullPrice + paymentAddon + deliveryAddon}";
         }
 
         private void confirmBtn_Click(object sender, EventArgs e) {
@@ -98,13 +99,18 @@ namespace PresentationLayer {
 
             foreach (ICart i in Cart.Items) {
                 if(i is Order) {
-                    (i as Order).Payment = new Payment(i.SumPrices() + paymentAddon + deliveryAddon, method, Payment.RentalOrder.ORDER);
-                    (i as Order).CreateOrder();
+                    if ((i as Order).OrderItems.Count != 0) {
+                        (i as Order).Payment = new Payment(i.SumPrices() + paymentAddon + deliveryAddon, method, Payment.RentalOrder.ORDER);
+                        (i as Order).Payment.Insert();
+                        (i as Order).CreateOrder();
+                    }
                 }
                 else {
                     (i as Rental).Payment = new Payment(i.SumPrices() + paymentAddon + deliveryAddon, method, Payment.RentalOrder.RENTAL);
+                    (i as Rental).Payment.Insert();
                     (i as Rental).CreateRental();
                 }
+                 
             }
 
             
@@ -114,6 +120,15 @@ namespace PresentationLayer {
             nextForm.StartPosition = FormStartPosition.Manual;
             nextForm.FormClosing += delegate { this.Close(); };
             nextForm.Show();
+            this.Hide();
+        }
+
+        private void logoBtn_Click(object sender, EventArgs e) {
+            var frm = new InventoryUI();
+            frm.Location = this.Location;
+            frm.StartPosition = FormStartPosition.Manual;
+            frm.FormClosing += delegate { this.Close(); };
+            frm.Show();
             this.Hide();
         }
 
@@ -128,10 +143,11 @@ namespace PresentationLayer {
                 }
                 else if (i == e.Index && i == 1) {
                     deliveryLabel.Text = $"Delivery | + $5";
-                    paymentAddon = 5;
+                    deliveryAddon = 5;
                     break;
                 }
             }
+            priceSumLabel.Text = $"Summary: ${fullPrice + paymentAddon + deliveryAddon}";
         }
     }
 }

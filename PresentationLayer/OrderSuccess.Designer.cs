@@ -25,8 +25,8 @@
         private void InitializeComponent() {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(OrderSuccess));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.msgLabel = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.msgLabel = new System.Windows.Forms.Label();
             this.backBtn = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -43,6 +43,15 @@
             this.panel1.Size = new System.Drawing.Size(819, 156);
             this.panel1.TabIndex = 13;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(62, 32);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(86, 86);
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
+            // 
             // msgLabel
             // 
             this.msgLabel.BackColor = System.Drawing.Color.Gray;
@@ -53,15 +62,6 @@
             this.msgLabel.TabIndex = 0;
             this.msgLabel.Text = "Order XXXX Successfully placed";
             this.msgLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(62, 32);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(86, 86);
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
             // 
             // backBtn
             // 
@@ -74,6 +74,7 @@
             this.backBtn.TabIndex = 14;
             this.backBtn.Text = "Back";
             this.backBtn.UseVisualStyleBackColor = false;
+            this.backBtn.Click += new System.EventHandler(this.backBtn_Click);
             // 
             // OrderSuccess
             // 
