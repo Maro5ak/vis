@@ -13,22 +13,20 @@ using System.Windows.Forms;
 namespace PresentationLayer {
     public partial class CheckoutPage : Form {
         private int fullPrice = 0;
-        Cart cart;
-        Payment.P paymentMethod;
+        string paymentMethod;
         private int paymentAddon, deliveryAddon;
-        public CheckoutPage(Cart cart) {
+        public CheckoutPage() {
             InitializeComponent();
-            this.cart = cart;
-            Customer current = cart.Customer;
+            Customer current = Cart.Customer;
             
             nameBox.Text = Utils.Concat(current.Firstname, current.Lastname);
             emailBox.Text = current.Email;
             addressBox.Text = current.Address;
             paymentLabel.Text = "Payment Method: | + $0";
             deliveryLabel.Text = "Delivery: | + $0";
-            itemsPriceLabel.Text = $"Items Price: ${cart.SumPrices()}";
-            depositLabel.Text = $"Deposit: ${cart.SumDeposits()}";
-            fullPrice += cart.SumPrices();
+            itemsPriceLabel.Text = $"Items Price: ${Cart.SumPrices()}";
+            depositLabel.Text = $"Deposit: ${Cart.SumDeposits()}";
+            fullPrice += Cart.SumPrices();
 
         }
 
@@ -86,6 +84,7 @@ namespace PresentationLayer {
         }
 
         private void confirmBtn_Click(object sender, EventArgs e) {
+            
             Payment.PaymentMethodEnum method = Payment.PaymentMethodEnum.CARD;
             if (paymentMethod == "paypal")
                  method = Payment.PaymentMethodEnum.CARD;
@@ -97,7 +96,7 @@ namespace PresentationLayer {
                 method = Payment.PaymentMethodEnum.CARD;
             
 
-            foreach (ICart i in cart.Items) {
+            foreach (ICart i in Cart.Items) {
                 if(i is Order) {
                     (i as Order).Payment = new Payment(i.SumPrices() + paymentAddon + deliveryAddon, method, Payment.RentalOrder.ORDER);
                     (i as Order).CreateOrder();
@@ -110,7 +109,7 @@ namespace PresentationLayer {
 
             
 
-            Form nextForm = new OrderSuccess(cart.GetOrderId());
+            Form nextForm = new OrderSuccess(Cart.GetOrderId());
             nextForm.Location = this.Location;
             nextForm.StartPosition = FormStartPosition.Manual;
             nextForm.FormClosing += delegate { this.Close(); };

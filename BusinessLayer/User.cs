@@ -31,7 +31,7 @@ namespace BusinessLayer {
                     reader.Read();
                     if (reader.HasRows) {
                         id = (int)reader[0];
-                        if (reader[1] != null && (string)reader[1] == "1") {
+                        if (DBNull.Value != reader[1] && (string)reader[1] == "1") {
                             Runtime.privilegedMode = true;
                         }
                         return true;

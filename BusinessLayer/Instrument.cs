@@ -5,7 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace BusinessLayer {
-    public class Instrument : IActiveRecord<Instrument> {
+    public class Instrument : IActiveRecord<Instrument>{
+        public int Id { get; set; }
         public string Type { get; set; }
         public string Manufacturer { get; set; } 
         public string Name { get; set; }
@@ -16,7 +17,8 @@ namespace BusinessLayer {
         public bool Rentable { get; private set; }
         
         public Instrument() { }
-        public Instrument(string type, string manufacturer, string name, string description, int priceBuy, int priceRent = 0, int deposit = 0, bool rentable = true) {
+        public Instrument(int id, string type, string manufacturer, string name, string description, int priceBuy, int priceRent = 0, int deposit = 0, bool rentable = true) {
+            Id = id;
             Type = type;
             Manufacturer = manufacturer;
             Name = name;
@@ -31,9 +33,6 @@ namespace BusinessLayer {
             throw new NotImplementedException();
         }
 
-        public Instrument Find() {
-            throw new NotImplementedException();
-        }
 
         public void Insert() {
             throw new NotImplementedException();
@@ -42,5 +41,6 @@ namespace BusinessLayer {
         public void Update() {
             throw new NotImplementedException();
         }
+
     }
 }

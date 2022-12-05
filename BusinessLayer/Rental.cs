@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DataLayer;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Security.Cryptography;
@@ -24,7 +25,7 @@ namespace BusinessLayer {
         }
 
         public void CreateRental() {
-
+            RentalTransactionScript.InsertRental(StartTime, EndTime, (!Penalty ? '0' : '1'), Customer.Id, Instrument.Id, Customer.Address, Payment.Id);
         }
 
         public void CancelRental() {
@@ -35,6 +36,10 @@ namespace BusinessLayer {
         }
         public void ReturnRental() {
 
+        }
+
+        public int GetLastId() {
+            return RentalTransactionScript.GetLastId();
         }
 
         public int SumPrices() {

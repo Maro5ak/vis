@@ -22,9 +22,9 @@ namespace BusinessLayer {
             
 
             if (data[6] == DBNull.Value)
-                return new Instrument(data[1].ToString(), data[2].ToString(), data[3].ToString(), data[4].ToString(), Convert.ToInt32(data[5]), rentable: false);
+                return new Instrument(id, data[1].ToString(), data[2].ToString(), data[3].ToString(), data[4].ToString(), Convert.ToInt32(data[5]), rentable: false);
             else
-                return new Instrument(data[1].ToString(), data[2].ToString(), data[3].ToString(), data[4].ToString(), Convert.ToInt32(data[5]), Convert.ToInt32(data[6]), Convert.ToInt32(data[7]));
+                return new Instrument(id, data[1].ToString(), data[2].ToString(), data[3].ToString(), data[4].ToString(), Convert.ToInt32(data[5]), Convert.ToInt32(data[6]), Convert.ToInt32(data[7]));
         }
     }
 }

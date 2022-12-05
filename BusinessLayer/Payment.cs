@@ -50,8 +50,8 @@ namespace BusinessLayer {
         }
 
         public Payment(int amount, PaymentMethodEnum paymentMethod, RentalOrder itemPayedFor) {
-            Id = GetLastId();
             connectionString = DatabaseConnector.GetBuilder().ConnectionString;
+            Id = GetLastId();
             Amount = amount;
             Date = DateTime.Now;
             PaymentMethod = paymentMethod;

@@ -12,17 +12,18 @@ using ExternalLibraries;
 
 namespace PresentationLayer {
     public partial class InstrumentDetails : Form {
+        Instrument currentInstrument;
         public InstrumentDetails(int id) {
             InitializeComponent();
-           
-            this.Text = $"Product: {Inventory.inventoryMap[id].Manufacturer} {Inventory.inventoryMap[id].Name}";
-            instrumentLabel.Text = Inventory.inventoryMap[id].Name;
-            manufacturerLabel.Text = Inventory.inventoryMap[id].Manufacturer;
-            descriptionLabel.Text = Inventory.inventoryMap[id].Description;
-            nameLabel.Text = Inventory.inventoryMap[id].Name;
-            typeLabel.Text = Inventory.inventoryMap[id].Type;
-            buyLabel.Text = $"Price to buy: ${Inventory.inventoryMap[id].PriceBuy}";
-            int priceRent = Inventory.inventoryMap[id].PriceRent;
+            currentInstrument = Inventory.inventoryMap[id];
+            this.Text = $"Product: {currentInstrument.Manufacturer} {currentInstrument.Name}";
+            instrumentLabel.Text = currentInstrument.Name;
+            manufacturerLabel.Text = currentInstrument.Manufacturer;
+            descriptionLabel.Text = currentInstrument.Description;
+            nameLabel.Text = currentInstrument.Name;
+            typeLabel.Text = currentInstrument.Type;
+            buyLabel.Text = $"Price to buy: ${currentInstrument.PriceBuy}";
+            int priceRent = currentInstrument.PriceRent;
             if (priceRent == 0) {
                 rentLabel.Hide();
                 rentCheckBox.Hide();
@@ -52,6 +53,24 @@ namespace PresentationLayer {
             nextForm.StartPosition = FormStartPosition.Manual;
             nextForm.FormClosing += delegate { this.Close(); };
             nextForm.Show();
+            this.Hide();
+        }
+
+        private void addToCartBtn_Click(object sender, EventArgs e) {
+            if (rentCheckBox.Checked) {
+                Cart.Add(new Rental(currentInstrument, new Customer(Runtime.loggedIn), DateTime.Now));
+            }
+            else {
+                Cart.ActiveOrder.Add(currentInstrument);
+            }
+        }
+
+        private void cartBtn_Click(object sender, EventArgs e) {
+            var frm = new CartPage();
+            frm.Location = this.Location;
+            frm.StartPosition = FormStartPosition.Manual;
+            frm.FormClosing += delegate { this.Close(); };
+            frm.Show();
             this.Hide();
         }
     }

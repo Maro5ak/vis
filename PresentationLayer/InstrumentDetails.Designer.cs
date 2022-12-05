@@ -81,6 +81,7 @@
             this.cartBtn.TabIndex = 10;
             this.cartBtn.Text = "Cart";
             this.cartBtn.UseVisualStyleBackColor = false;
+            this.cartBtn.Click += new System.EventHandler(this.cartBtn_Click);
             // 
             // profileBtn
             // 
@@ -186,6 +187,7 @@
             this.addToCartBtn.TabIndex = 20;
             this.addToCartBtn.Text = "Add to cart";
             this.addToCartBtn.UseVisualStyleBackColor = false;
+            this.addToCartBtn.Click += new System.EventHandler(this.addToCartBtn_Click);
             // 
             // rentCheckBox
             // 
