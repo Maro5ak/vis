@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\maros\\source\\repos\\visTest\\ExternalLibraries\\ExternalLibraries.csproj",
+      "projectUniqueName": "C:\\Users\\maros\\source\\repos\\VIS\\vis\\ExternalLibraries\\ExternalLibraries.csproj",
       "projectName": "ExternalLibraries",
-      "projectPath": "C:\\Users\\maros\\source\\repos\\visTest\\ExternalLibraries\\ExternalLibraries.csproj",
+      "projectPath": "C:\\Users\\maros\\source\\repos\\VIS\\vis\\ExternalLibraries\\ExternalLibraries.csproj",
       "packagesPath": "C:\\Users\\maros\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\maros\\source\\repos\\visTest\\ExternalLibraries\\obj\\",
+      "outputPath": "C:\\Users\\maros\\source\\repos\\VIS\\vis\\ExternalLibraries\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\maros\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -61,7 +61,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
       }
     }
   }

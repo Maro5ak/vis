@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BusinessLayer;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,18 +8,37 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ExternalLibraries;
 
 namespace PresentationLayer {
     public partial class InstrumentDetails : Form {
-        public InstrumentDetails() {
+        public InstrumentDetails(int id) {
             InitializeComponent();
+           
+            this.Text = $"Product: {Inventory.inventoryMap[id].Manufacturer} {Inventory.inventoryMap[id].Name}";
+            instrumentLabel.Text = Inventory.inventoryMap[id].Name;
+            manufacturerLabel.Text = Inventory.inventoryMap[id].Manufacturer;
+            descriptionLabel.Text = Inventory.inventoryMap[id].Description;
+            nameLabel.Text = Inventory.inventoryMap[id].Name;
+            typeLabel.Text = Inventory.inventoryMap[id].Type;
+            buyLabel.Text = $"Price to buy: ${Inventory.inventoryMap[id].PriceBuy}";
+            int priceRent = Inventory.inventoryMap[id].PriceRent;
+            if (priceRent == 0) {
+                rentLabel.Hide();
+                rentCheckBox.Hide();
+            }
+            else rentLabel.Text = $"Price to rent: ${priceRent}";
+
+
         }
+
+        
 
         private void logoBtn_Click(object sender, EventArgs e) {
             var frm = new InventoryUI();
             frm.Location = this.Location;
             frm.StartPosition = FormStartPosition.Manual;
-            frm.FormClosing += delegate { this.Show(); };
+            frm.FormClosing += delegate { this.Close(); };
             frm.Show();
             this.Hide();
         }

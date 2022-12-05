@@ -146,6 +146,16 @@
             "rid": "win"
           }
         }
+      },
+      "ExternalLibraries/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/ExternalLibraries.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ExternalLibraries.dll": {}
+        }
       }
     }
   },
@@ -462,10 +472,16 @@
         "useSharedDesignerContext.txt",
         "version.txt"
       ]
+    },
+    "ExternalLibraries/1.0.0": {
+      "type": "project",
+      "path": "../ExternalLibraries/ExternalLibraries.csproj",
+      "msbuildProject": "../ExternalLibraries/ExternalLibraries.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
+      "ExternalLibraries >= 1.0.0",
       "System.Data.SqlClient >= 4.8.5"
     ]
   },
@@ -475,11 +491,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\maros\\source\\repos\\visTest\\DataLayer\\DataLayer.csproj",
+      "projectUniqueName": "C:\\Users\\maros\\source\\repos\\VIS\\vis\\DataLayer\\DataLayer.csproj",
       "projectName": "DataLayer",
-      "projectPath": "C:\\Users\\maros\\source\\repos\\visTest\\DataLayer\\DataLayer.csproj",
+      "projectPath": "C:\\Users\\maros\\source\\repos\\VIS\\vis\\DataLayer\\DataLayer.csproj",
       "packagesPath": "C:\\Users\\maros\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\maros\\source\\repos\\visTest\\DataLayer\\obj\\",
+      "outputPath": "C:\\Users\\maros\\source\\repos\\VIS\\vis\\DataLayer\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\maros\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -495,7 +511,11 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\maros\\source\\repos\\VIS\\vis\\ExternalLibraries\\ExternalLibraries.csproj": {
+              "projectPath": "C:\\Users\\maros\\source\\repos\\VIS\\vis\\ExternalLibraries\\ExternalLibraries.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
@@ -529,7 +549,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
       }
     }
   }

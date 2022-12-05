@@ -13,6 +13,13 @@ namespace BusinessLayer {
             }
         }
 
+        public static string Concat(string a, string b) {
+            StringBuilder sb = new StringBuilder();
+            sb.Append(a);
+            sb.Append(" ");
+            sb.Append(b);
+            return sb.ToString();
+        }
         public static string GetHashDataString(string data) {
             StringBuilder sb = new StringBuilder();
             foreach(byte b in HashData(data)) 

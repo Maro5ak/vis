@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DataLayer;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,18 +11,28 @@ namespace BusinessLayer {
         public Customer Customer { get; set; }
         public Payment Payment { get; set; }
 
-        public Order(List<Instrument> orderItems, Customer customer, Payment payment) {
+        public Order(List<Instrument> orderItems, Customer customer, Payment payment = null) {
             OrderItems = orderItems;
             Customer = customer;
             Payment = payment;
         }
 
-        public void createOrder() {
+        public int SumPrices() {
+            int res = 0;
+            foreach (var i in OrderItems)
+                res += i.PriceBuy;
 
+            return res;
         }
 
-        public void cancelOrder() {
 
+        public void CreateOrder() {
+            OrderTransactionScript.InsertOrder(Customer.Id, Payment.Id, Customer.Address);
+        }
+
+        public void CancelOrder() {
+            OrderTransactionScript.RemoveOrder(Customer.Id, Payment.Id, Customer.Address);
+            Payment.Delete();
         }
     }
 }

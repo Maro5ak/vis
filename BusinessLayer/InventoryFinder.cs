@@ -14,8 +14,12 @@ namespace BusinessLayer {
             DataRow data = map.Get(id);
             if (data == null) {
                 data = map.Find(id);
+                if(data == null) {
+                    return null;
+                }
             }
 
+            
 
             if (data[6] == DBNull.Value)
                 return new Instrument(data[1].ToString(), data[2].ToString(), data[3].ToString(), data[4].ToString(), Convert.ToInt32(data[5]), rentable: false);

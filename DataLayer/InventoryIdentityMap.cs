@@ -40,7 +40,9 @@ namespace DataLayer {
                             inventoryMap[Convert.ToInt32(table.Rows[0][0])] = table.Rows[0];
                         }
 
-                        return inventoryMap[id];
+                        if (inventoryMap.ContainsKey(id))
+                            return inventoryMap[id];
+                        else return null;
                     }
                 }
             }

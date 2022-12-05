@@ -14,7 +14,7 @@ namespace BusinessLayer {
         public DateTime EndTime { get; private set; }
         public bool Penalty { get; private set; }
 
-        public Rental(Instrument instrument, Customer customer, Payment payment, DateTime startTime) {
+        public Rental(Instrument instrument, Customer customer, DateTime startTime, Payment payment = null) {
             Instrument = instrument;
             Customer = customer;
             Payment = payment;
@@ -23,18 +23,22 @@ namespace BusinessLayer {
             Penalty = false;
         }
 
-        public void createRental() {
+        public void CreateRental() {
 
         }
 
-        public void cancelRental() {
+        public void CancelRental() {
 
         }
-        public void extendReturnTime(int month) {
+        public void ExtendReturnTime(int month) {
 
         }
-        public void returnRental() {
+        public void ReturnRental() {
 
+        }
+
+        public int SumPrices() {
+            return Instrument.PriceRent * ((EndTime.Year - StartTime.Year) * 12 + EndTime.Month - StartTime.Month);
         }
     }
 }

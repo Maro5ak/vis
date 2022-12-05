@@ -34,7 +34,7 @@
             // panel1
             // 
             this.panel1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.panel1.Controls.Add(this.goBackBtn);
             this.panel1.Controls.Add(this.registerPageBtn);
             this.panel1.Controls.Add(this.loginPageBtn);
@@ -45,6 +45,7 @@
             // 
             // goBackBtn
             // 
+            this.goBackBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.goBackBtn.FlatAppearance.BorderSize = 0;
             this.goBackBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.goBackBtn.Image = ((System.Drawing.Image)(resources.GetObject("goBackBtn.Image")));
@@ -52,15 +53,16 @@
             this.goBackBtn.Name = "goBackBtn";
             this.goBackBtn.Size = new System.Drawing.Size(35, 35);
             this.goBackBtn.TabIndex = 13;
-            this.goBackBtn.UseVisualStyleBackColor = true;
+            this.goBackBtn.UseVisualStyleBackColor = false;
             this.goBackBtn.Click += new System.EventHandler(this.goBackBtn_Click);
             // 
             // registerPageBtn
             // 
-            this.registerPageBtn.BackColor = System.Drawing.Color.Olive;
+            this.registerPageBtn.BackColor = System.Drawing.Color.Maroon;
             this.registerPageBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.registerPageBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.registerPageBtn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.registerPageBtn.ForeColor = System.Drawing.Color.White;
             this.registerPageBtn.Location = new System.Drawing.Point(212, 44);
             this.registerPageBtn.Name = "registerPageBtn";
             this.registerPageBtn.Size = new System.Drawing.Size(181, 66);
@@ -71,10 +73,11 @@
             // 
             // loginPageBtn
             // 
-            this.loginPageBtn.BackColor = System.Drawing.Color.Olive;
+            this.loginPageBtn.BackColor = System.Drawing.Color.Maroon;
             this.loginPageBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.loginPageBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.loginPageBtn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.loginPageBtn.ForeColor = System.Drawing.Color.White;
             this.loginPageBtn.Location = new System.Drawing.Point(14, 44);
             this.loginPageBtn.Name = "loginPageBtn";
             this.loginPageBtn.Size = new System.Drawing.Size(181, 66);

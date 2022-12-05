@@ -30,7 +30,8 @@
             this.profileBtn = new System.Windows.Forms.Button();
             this.orderList = new System.Windows.Forms.TableLayoutPanel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
+            this.priceLabel = new System.Windows.Forms.Label();
+            this.checkoutBtn = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -58,6 +59,7 @@
             this.logoBtn.Size = new System.Drawing.Size(75, 53);
             this.logoBtn.TabIndex = 14;
             this.logoBtn.UseVisualStyleBackColor = false;
+            this.logoBtn.Click += new System.EventHandler(this.logoBtn_Click);
             // 
             // cartBtn
             // 
@@ -73,6 +75,7 @@
             this.cartBtn.TabIndex = 7;
             this.cartBtn.Text = "Cart";
             this.cartBtn.UseVisualStyleBackColor = false;
+            this.cartBtn.Click += new System.EventHandler(this.cartBtn_Click);
             // 
             // profileBtn
             // 
@@ -88,6 +91,7 @@
             this.profileBtn.TabIndex = 6;
             this.profileBtn.Text = "Profile";
             this.profileBtn.UseVisualStyleBackColor = false;
+            this.profileBtn.Click += new System.EventHandler(this.profileBtn_Click);
             // 
             // orderList
             // 
@@ -97,6 +101,7 @@
             this.orderList.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.orderList.Location = new System.Drawing.Point(41, 31);
             this.orderList.Name = "orderList";
+            this.orderList.Padding = new System.Windows.Forms.Padding(5, 5, 0, 0);
             this.orderList.RowCount = 1;
             this.orderList.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.orderList.Size = new System.Drawing.Size(762, 273);
@@ -105,30 +110,42 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.panel2.Controls.Add(this.priceLabel);
             this.panel2.Controls.Add(this.orderList);
             this.panel2.Location = new System.Drawing.Point(47, 79);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(837, 393);
             this.panel2.TabIndex = 10;
             // 
-            // button1
+            // priceLabel
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(733, 402);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(117, 52);
-            this.button1.TabIndex = 11;
-            this.button1.Text = "Checkout";
-            this.button1.UseVisualStyleBackColor = false;
+            this.priceLabel.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.priceLabel.ForeColor = System.Drawing.Color.White;
+            this.priceLabel.Location = new System.Drawing.Point(41, 323);
+            this.priceLabel.Name = "priceLabel";
+            this.priceLabel.Size = new System.Drawing.Size(367, 42);
+            this.priceLabel.TabIndex = 10;
+            this.priceLabel.Text = "Price Sum: $99999";
+            // 
+            // checkoutBtn
+            // 
+            this.checkoutBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.checkoutBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.checkoutBtn.ForeColor = System.Drawing.Color.White;
+            this.checkoutBtn.Location = new System.Drawing.Point(733, 402);
+            this.checkoutBtn.Name = "checkoutBtn";
+            this.checkoutBtn.Size = new System.Drawing.Size(117, 52);
+            this.checkoutBtn.TabIndex = 11;
+            this.checkoutBtn.Text = "Checkout";
+            this.checkoutBtn.UseVisualStyleBackColor = false;
+            this.checkoutBtn.Click += new System.EventHandler(this.checkoutBtn_Click);
             // 
             // CartPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(922, 491);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.checkoutBtn);
             this.Controls.Add(this.cartBtn);
             this.Controls.Add(this.profileBtn);
             this.Controls.Add(this.panel1);
@@ -149,6 +166,7 @@
         private Button profileBtn;
         private TableLayoutPanel orderList;
         private Panel panel2;
-        private Button button1;
+        private Button checkoutBtn;
+        private Label priceLabel;
     }
 }

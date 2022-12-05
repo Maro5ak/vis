@@ -22,3 +22,15 @@ C:\Users\maros\source\repos\visTest\ExternalLibraries\obj\Debug\net6.0\ExternalL
 C:\Users\maros\source\repos\visTest\ExternalLibraries\obj\Debug\net6.0\refint\ExternalLibraries.dll
 C:\Users\maros\source\repos\visTest\ExternalLibraries\obj\Debug\net6.0\ExternalLibraries.pdb
 C:\Users\maros\source\repos\visTest\ExternalLibraries\obj\Debug\net6.0\ref\ExternalLibraries.dll
+C:\Users\maros\source\repos\VIS\vis\ExternalLibraries\bin\Debug\net6.0\ExternalLibraries.deps.json
+C:\Users\maros\source\repos\VIS\vis\ExternalLibraries\bin\Debug\net6.0\ExternalLibraries.dll
+C:\Users\maros\source\repos\VIS\vis\ExternalLibraries\bin\Debug\net6.0\ExternalLibraries.pdb
+C:\Users\maros\source\repos\VIS\vis\ExternalLibraries\obj\Debug\net6.0\ExternalLibraries.csproj.AssemblyReference.cache
+C:\Users\maros\source\repos\VIS\vis\ExternalLibraries\obj\Debug\net6.0\ExternalLibraries.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\maros\source\repos\VIS\vis\ExternalLibraries\obj\Debug\net6.0\ExternalLibraries.AssemblyInfoInputs.cache
+C:\Users\maros\source\repos\VIS\vis\ExternalLibraries\obj\Debug\net6.0\ExternalLibraries.AssemblyInfo.cs
+C:\Users\maros\source\repos\VIS\vis\ExternalLibraries\obj\Debug\net6.0\ExternalLibraries.csproj.CoreCompileInputs.cache
+C:\Users\maros\source\repos\VIS\vis\ExternalLibraries\obj\Debug\net6.0\ExternalLibraries.dll
+C:\Users\maros\source\repos\VIS\vis\ExternalLibraries\obj\Debug\net6.0\refint\ExternalLibraries.dll
+C:\Users\maros\source\repos\VIS\vis\ExternalLibraries\obj\Debug\net6.0\ExternalLibraries.pdb
+C:\Users\maros\source\repos\VIS\vis\ExternalLibraries\obj\Debug\net6.0\ref\ExternalLibraries.dll

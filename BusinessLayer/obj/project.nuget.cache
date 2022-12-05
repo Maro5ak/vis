@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "oOmi27+gL9XZNz6h86x4OR1IRjERL6NoXW3YqbTKkvDv6tMapA0oNIyHlDD6Lt95VREKbjk+ORIsiGC3PlkaoA==",
+  "dgSpecHash": "TDgl5dYn+MidAB6cmZi+43rFxBY4j5XEkTx6fk6/JKGfahbwB0qSnYQnZenxBlDSF5riGhO8Zrt6ADPCg3YJmA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\maros\\source\\repos\\visTest\\BusinessLayer\\BusinessLayer.csproj",
+  "projectFilePath": "C:\\Users\\maros\\source\\repos\\VIS\\vis\\BusinessLayer\\BusinessLayer.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\maros\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",
     "C:\\Users\\maros\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",

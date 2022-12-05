@@ -9,7 +9,6 @@ namespace BusinessLayer {
         void Insert();
         void Update();
         void Delete();
-        T Find();
 
     }
 }

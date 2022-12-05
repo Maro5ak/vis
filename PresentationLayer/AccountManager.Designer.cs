@@ -29,7 +29,7 @@
             this.profilePic = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.logoBtn = new System.Windows.Forms.Button();
-            this.profileName = new System.Windows.Forms.TextBox();
+            this.profileNameBox = new System.Windows.Forms.TextBox();
             this.emailBox = new System.Windows.Forms.TextBox();
             this.passwordBox = new System.Windows.Forms.TextBox();
             this.phoneBox = new System.Windows.Forms.TextBox();
@@ -37,6 +37,7 @@
             this.ordersBtn = new System.Windows.Forms.Button();
             this.rentalBtn = new System.Windows.Forms.Button();
             this.saveBtn = new System.Windows.Forms.Button();
+            this.ticketsBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.profilePic)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -74,9 +75,10 @@
             // profilePic
             // 
             this.profilePic.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.profilePic.Location = new System.Drawing.Point(104, 91);
+            this.profilePic.Image = ((System.Drawing.Image)(resources.GetObject("profilePic.Image")));
+            this.profilePic.Location = new System.Drawing.Point(103, 84);
             this.profilePic.Name = "profilePic";
-            this.profilePic.Size = new System.Drawing.Size(220, 213);
+            this.profilePic.Size = new System.Drawing.Size(220, 220);
             this.profilePic.TabIndex = 4;
             this.profilePic.TabStop = false;
             // 
@@ -105,17 +107,17 @@
             this.logoBtn.UseVisualStyleBackColor = false;
             this.logoBtn.Click += new System.EventHandler(this.logoBtn_Click);
             // 
-            // profileName
+            // profileNameBox
             // 
-            this.profileName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.profileName.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.profileName.Location = new System.Drawing.Point(125, 310);
-            this.profileName.MaxLength = 50;
-            this.profileName.Name = "profileName";
-            this.profileName.Size = new System.Drawing.Size(180, 25);
-            this.profileName.TabIndex = 6;
-            this.profileName.Text = "Profile Name";
-            this.profileName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.profileNameBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.profileNameBox.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.profileNameBox.Location = new System.Drawing.Point(125, 310);
+            this.profileNameBox.MaxLength = 50;
+            this.profileNameBox.Name = "profileNameBox";
+            this.profileNameBox.Size = new System.Drawing.Size(180, 25);
+            this.profileNameBox.TabIndex = 6;
+            this.profileNameBox.Text = "Profile Name";
+            this.profileNameBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // emailBox
             // 
@@ -134,10 +136,8 @@
             this.passwordBox.Location = new System.Drawing.Point(556, 138);
             this.passwordBox.MaxLength = 80;
             this.passwordBox.Name = "passwordBox";
-            this.passwordBox.PasswordChar = '*';
             this.passwordBox.Size = new System.Drawing.Size(259, 23);
             this.passwordBox.TabIndex = 8;
-            this.passwordBox.Text = "Password";
             this.passwordBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.passwordBox.UseSystemPasswordChar = true;
             // 
@@ -190,7 +190,6 @@
             this.rentalBtn.TabIndex = 12;
             this.rentalBtn.Text = "Rented Items";
             this.rentalBtn.UseVisualStyleBackColor = false;
-            
             // 
             // saveBtn
             // 
@@ -205,13 +204,28 @@
             this.saveBtn.TabIndex = 13;
             this.saveBtn.Text = "Save Changes";
             this.saveBtn.UseVisualStyleBackColor = false;
-            
+            this.saveBtn.Click += new System.EventHandler(this.saveBtn_Click);
+            // 
+            // ticketsBtn
+            // 
+            this.ticketsBtn.BackColor = System.Drawing.Color.Silver;
+            this.ticketsBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ticketsBtn.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.ticketsBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ticketsBtn.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.ticketsBtn.Location = new System.Drawing.Point(634, 370);
+            this.ticketsBtn.Name = "ticketsBtn";
+            this.ticketsBtn.Size = new System.Drawing.Size(101, 48);
+            this.ticketsBtn.TabIndex = 14;
+            this.ticketsBtn.Text = "Open Tickets";
+            this.ticketsBtn.UseVisualStyleBackColor = false;
             // 
             // AccountManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(922, 491);
+            this.Controls.Add(this.ticketsBtn);
             this.Controls.Add(this.saveBtn);
             this.Controls.Add(this.rentalBtn);
             this.Controls.Add(this.ordersBtn);
@@ -219,7 +233,7 @@
             this.Controls.Add(this.phoneBox);
             this.Controls.Add(this.passwordBox);
             this.Controls.Add(this.emailBox);
-            this.Controls.Add(this.profileName);
+            this.Controls.Add(this.profileNameBox);
             this.Controls.Add(this.profilePic);
             this.Controls.Add(this.cartBtn);
             this.Controls.Add(this.profileBtn);
@@ -239,7 +253,7 @@
         private Button cartBtn;
         private PictureBox profilePic;
         private Panel panel1;
-        private TextBox profileName;
+        private TextBox profileNameBox;
         private TextBox emailBox;
         private TextBox passwordBox;
         private TextBox phoneBox;
@@ -248,5 +262,6 @@
         private Button rentalBtn;
         private Button saveBtn;
         private Button logoBtn;
+        private Button ticketsBtn;
     }
 }

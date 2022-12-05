@@ -10,8 +10,11 @@ namespace BusinessLayer {
         public static Dictionary<int, Instrument> inventoryMap = new Dictionary<int, Instrument>();
 
         public static void init() {
-            for(int i = 1; i < 6; i++)
-                inventoryMap.Add(i, InventoryFinder.Find(i));
+            for (int i = 1; ; i++) {
+                Instrument tmp = InventoryFinder.Find(i);
+                if (tmp == null) break;
+                inventoryMap.Add(i, tmp);
+            }
         }
 
     }

@@ -70,6 +70,7 @@
             this.cartBtn.TabIndex = 7;
             this.cartBtn.Text = "Cart";
             this.cartBtn.UseVisualStyleBackColor = false;
+            this.cartBtn.Click += new System.EventHandler(this.cartBtn_Click);
             // 
             // profileBtn
             // 
@@ -91,11 +92,11 @@
             // 
             this.inventoryLayout.ColumnCount = 1;
             this.inventoryLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.inventoryLayout.Location = new System.Drawing.Point(379, 79);
+            this.inventoryLayout.Location = new System.Drawing.Point(330, 79);
             this.inventoryLayout.Name = "inventoryLayout";
             this.inventoryLayout.RowCount = 1;
             this.inventoryLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.inventoryLayout.Size = new System.Drawing.Size(500, 400);
+            this.inventoryLayout.Size = new System.Drawing.Size(549, 400);
             this.inventoryLayout.TabIndex = 9;
             // 
             // InventoryUI

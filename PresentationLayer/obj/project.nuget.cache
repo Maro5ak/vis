@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Cxqw9/GOMOZl1FBH9UGsJcZRwlVNDJSPWOBD7yARAAXyZWimMOPqGX+Bov7eN8GE4M1Nsiz4vy8sHhWdUKnlIQ==",
+  "dgSpecHash": "/5SLgrRTucF+vDlj3nwvpJ/ecimP9D3DUHj4l5KsxbgX2I/Bg0Zqeg4gqkU8yFMsT286KS5k3kjGjS1KhFNYfg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\maros\\source\\repos\\visTest\\PresentationLayer\\PresentationLayer.csproj",
+  "projectFilePath": "C:\\Users\\maros\\source\\repos\\VIS\\vis\\PresentationLayer\\PresentationLayer.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\maros\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",
     "C:\\Users\\maros\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",
