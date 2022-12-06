@@ -17,12 +17,7 @@ namespace PresentationLayer {
         }
 
         private void backBtn_Click(object sender, EventArgs e) {
-            var frm = new InventoryUI();
-            frm.Location = this.Location;
-            frm.StartPosition = FormStartPosition.Manual;
-            frm.FormClosing += delegate { this.Close(); };
-            frm.Show();
-            this.Hide();
+            SceneManager.ChangeScene(this, new InventoryUI());
         }
     }
 }

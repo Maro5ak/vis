@@ -10,6 +10,9 @@
     <Compile Update="CheckoutPage.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="InstrumentAddScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="InstrumentDetails.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -32,6 +35,9 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="RentalsPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="TicketResolve.cs">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>

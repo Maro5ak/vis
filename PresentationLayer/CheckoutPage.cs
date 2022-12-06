@@ -32,12 +32,7 @@ namespace PresentationLayer {
 
 
         private void cartBtn_Click(object sender, EventArgs e) {
-            Form nextForm = new CartPage();
-            nextForm.Location = this.Location;
-            nextForm.StartPosition = FormStartPosition.Manual;
-            nextForm.FormClosing += delegate { this.Close(); };
-            nextForm.Show();
-            this.Hide();
+            SceneManager.ChangeScene(this, new CartPage());
         }
 
         private void profileBtn_Click(object sender, EventArgs e) {
@@ -45,11 +40,7 @@ namespace PresentationLayer {
             if (!Runtime.loginState)
                 nextForm = new LoginOrRegister();
 
-            nextForm.Location = this.Location;
-            nextForm.StartPosition = FormStartPosition.Manual;
-            nextForm.FormClosing += delegate { this.Close(); };
-            nextForm.Show();
-            this.Hide();
+            SceneManager.ChangeScene(this, nextForm);
         }
 
         private void paymentMethodCheckBox_ItemCheck(object sender, ItemCheckEventArgs e) {
@@ -95,8 +86,9 @@ namespace PresentationLayer {
                 method = Payment.PaymentMethodEnum.TRANSFER;
             if (paymentMethod == "card")
                 method = Payment.PaymentMethodEnum.CARD;
-            
 
+            bool sanityCheck = true;
+            
             foreach (ICart i in Cart.Items) {
                 if(i is Order) {
                     if ((i as Order).OrderItems.Count != 0) {
@@ -113,23 +105,13 @@ namespace PresentationLayer {
                  
             }
 
+            if (sanityCheck) 
+                SceneManager.ChangeScene(this, new OrderSuccess(Cart.GetOrderId()));
             
-
-            Form nextForm = new OrderSuccess(Cart.GetOrderId());
-            nextForm.Location = this.Location;
-            nextForm.StartPosition = FormStartPosition.Manual;
-            nextForm.FormClosing += delegate { this.Close(); };
-            nextForm.Show();
-            this.Hide();
         }
 
         private void logoBtn_Click(object sender, EventArgs e) {
-            var frm = new InventoryUI();
-            frm.Location = this.Location;
-            frm.StartPosition = FormStartPosition.Manual;
-            frm.FormClosing += delegate { this.Close(); };
-            frm.Show();
-            this.Hide();
+            SceneManager.ChangeScene(this, new InventoryUI());
         }
 
         private void deliveryOptionsCheckBox_ItemCheck(object sender, ItemCheckEventArgs e) {

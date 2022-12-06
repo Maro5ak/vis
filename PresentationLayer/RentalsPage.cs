@@ -44,33 +44,15 @@ namespace PresentationLayer {
 
         }
         private void profileBtn_Click(object sender, EventArgs e) {
-            Form nextForm = new AccountManager();
-            if (!Runtime.loginState)
-                nextForm = new LoginOrRegister();
-
-            nextForm.Location = this.Location;
-            nextForm.StartPosition = FormStartPosition.Manual;
-            nextForm.FormClosing += delegate { this.Close(); };
-            nextForm.Show();
-            this.Hide();
+            SceneManager.ChangeScene(this, new AccountManager());
         }
 
         private void cartBtn_Click(object sender, EventArgs e) {
-            Form nextForm = new CartPage();
-            nextForm.Location = this.Location;
-            nextForm.StartPosition = FormStartPosition.Manual;
-            nextForm.FormClosing += delegate { this.Close(); };
-            nextForm.Show();
-            this.Hide();
+            SceneManager.ChangeScene(this, new CartPage());
         }
 
         private void logoBtn_Click(object sender, EventArgs e) {
-            Form nextForm = new InventoryUI();
-            nextForm.Location = this.Location;
-            nextForm.StartPosition = FormStartPosition.Manual;
-            nextForm.FormClosing += delegate { this.Close(); };
-            nextForm.Show();
-            this.Hide();
+            SceneManager.ChangeScene(this, new InventoryUI());
         }
     }
     

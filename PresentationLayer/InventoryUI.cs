@@ -16,6 +16,10 @@ namespace PresentationLayer {
 
         public InventoryUI() {
             InitializeComponent();
+            instrumentsManagerBtn.Visible = false;
+            if (Runtime.privilegedMode) {
+                instrumentsManagerBtn.Visible = true;
+            }
             int instrumentCount = Inventory.inventoryMap.Count;
             int columnCount = inventoryLayout.ColumnCount = 5;
             int rowCount = inventoryLayout.RowCount = 1 + (instrumentCount / 5);
@@ -48,37 +52,28 @@ namespace PresentationLayer {
 
         private void instrumentButtonClick(object sender, EventArgs e) {
             Button pressed = (Button)sender;
-            string name = pressed.Name;
-            
-            int instrumentId = Int32.Parse(name.Substring(3));
-            Form nextForm = new InstrumentDetails(instrumentId);
-            nextForm.Location = this.Location;
-            nextForm.StartPosition = FormStartPosition.Manual;
-            nextForm.FormClosing += delegate { this.Close(); };
-            nextForm.Show();
-            this.Hide();
+
+            int instrumentId = Int32.Parse(pressed.Name.Substring(3));
+            SceneManager.ChangeScene(this, new InstrumentDetails(instrumentId));
             
         }
 
         private void profileBtn_Click(object sender, EventArgs e) {
             Form nextForm = new AccountManager();
+            
             if (!Runtime.loginState)
                 nextForm = new LoginOrRegister();
 
-            nextForm.Location = this.Location;
-            nextForm.StartPosition = FormStartPosition.Manual;
-            nextForm.FormClosing += delegate { this.Close(); };
-            nextForm.Show();
-            this.Hide();
+            SceneManager.ChangeScene(this, nextForm);
+            
         }
 
         private void cartBtn_Click(object sender, EventArgs e) {
-            Form nextForm = new CartPage();
-            nextForm.Location = this.Location;
-            nextForm.StartPosition = FormStartPosition.Manual;
-            nextForm.FormClosing += delegate { this.Close(); };
-            nextForm.Show();
-            this.Hide();
+            SceneManager.ChangeScene(this, new CartPage());
+        }
+
+        private void instrumentsManagerBtn_Click(object sender, EventArgs e) {
+            SceneManager.ChangeScene(this, new InstrumentAddScreen());
         }
     }
 }

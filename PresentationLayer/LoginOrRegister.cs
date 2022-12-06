@@ -15,30 +15,15 @@ namespace PresentationLayer {
         }
 
         private void loginPageBtn_Click(object sender, EventArgs e) {
-            var frm = new LoginPage();
-            frm.Location = this.Location;
-            frm.StartPosition = FormStartPosition.Manual;
-            frm.FormClosing += delegate { this.Close(); };
-            frm.Show();
-            this.Hide();
+            SceneManager.ChangeScene(this, new LoginPage());
         }
 
         private void registerPageBtn_Click(object sender, EventArgs e) {
-            var frm = new RegisterPage();
-            frm.Location = this.Location;
-            frm.StartPosition = FormStartPosition.Manual;
-            frm.FormClosing += delegate { this.Close(); };
-            frm.Show();
-            this.Hide();
+            SceneManager.ChangeScene(this, new RegisterPage());
         }
 
         private void goBackBtn_Click(object sender, EventArgs e) {
-            var frm = new InventoryUI();
-            frm.Location = this.Location;
-            frm.StartPosition = FormStartPosition.Manual;
-            frm.FormClosing += delegate { this.Close(); };
-            frm.Show();
-            this.Hide();
+            SceneManager.ChangeScene(this, new InventoryUI());
         }
     }
 }

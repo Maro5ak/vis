@@ -6,6 +6,6 @@ using System.Threading.Tasks;
 
 namespace BusinessLayer {
     public interface IPerson {
-        bool Validate(out int id);
+        bool Validate(out int id, out string errorMsg);
     }
 }

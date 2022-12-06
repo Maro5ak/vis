@@ -15,9 +15,10 @@ namespace BusinessLayer {
         public int PriceRent { get; set; }
         public int Deposit { get; set; }
         public bool Rentable { get; private set; }
+        public int Quantity { get; set; }
         
         public Instrument() { }
-        public Instrument(int id, string type, string manufacturer, string name, string description, int priceBuy, int priceRent = 0, int deposit = 0, bool rentable = true) {
+        public Instrument(int id, string type, string manufacturer, string name, string description, int priceBuy, int priceRent = 0, int deposit = 0, int quantity = 0, bool rentable = true) {
             Id = id;
             Type = type;
             Manufacturer = manufacturer;
@@ -27,6 +28,7 @@ namespace BusinessLayer {
             PriceRent = priceRent;
             Deposit = deposit;
             Rentable = rentable;
+            Quantity = quantity;
         }
 
         public void Delete() {

@@ -36,12 +36,7 @@ namespace PresentationLayer {
         
 
         private void logoBtn_Click(object sender, EventArgs e) {
-            var frm = new InventoryUI();
-            frm.Location = this.Location;
-            frm.StartPosition = FormStartPosition.Manual;
-            frm.FormClosing += delegate { this.Close(); };
-            frm.Show();
-            this.Hide();
+            SceneManager.ChangeScene(this, new InventoryUI());
         }
 
         private void profileBtn_Click(object sender, EventArgs e) {
@@ -49,11 +44,7 @@ namespace PresentationLayer {
             if (!Runtime.loginState)
                 nextForm = new LoginOrRegister();
 
-            nextForm.Location = this.Location;
-            nextForm.StartPosition = FormStartPosition.Manual;
-            nextForm.FormClosing += delegate { this.Close(); };
-            nextForm.Show();
-            this.Hide();
+            SceneManager.ChangeScene(this, nextForm);
         }
 
         private void addToCartBtn_Click(object sender, EventArgs e) {
@@ -66,12 +57,7 @@ namespace PresentationLayer {
         }
 
         private void cartBtn_Click(object sender, EventArgs e) {
-            var frm = new CartPage();
-            frm.Location = this.Location;
-            frm.StartPosition = FormStartPosition.Manual;
-            frm.FormClosing += delegate { this.Close(); };
-            frm.Show();
-            this.Hide();
+            SceneManager.ChangeScene(this, new CartPage());
         }
     }
 }

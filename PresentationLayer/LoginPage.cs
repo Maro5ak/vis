@@ -17,28 +17,18 @@ namespace PresentationLayer {
         }
 
         private void goBackBtn_Click(object sender, EventArgs e) {
-            var frm = new InventoryUI();
-            frm.Location = this.Location;
-            frm.StartPosition = FormStartPosition.Manual;
-            frm.FormClosing += delegate { this.Close(); };
-            frm.Show();
-            this.Hide();
+            SceneManager.ChangeScene(this, new LoginOrRegister());
         }
         
         private void loginBtn_Click(object sender, EventArgs e) {
             
             User user = new User(emailBox.Text, passwordBox.Text);
-            if (!user.Validate(out Runtime.loggedIn)) {
-                MessageBox.Show("Incorrect email or password.");
+            if (!user.Validate(out Runtime.loggedIn, out string errorMsg)) {
+                MessageBox.Show(errorMsg);
             }
             else {
                 Runtime.loginState = true;
-                var frm = new InventoryUI();
-                frm.Location = this.Location;
-                frm.StartPosition = FormStartPosition.Manual;
-                frm.FormClosing += delegate { this.Close(); };
-                frm.Show();
-                this.Hide();
+                SceneManager.ChangeScene(this, new InventoryUI());
             }
         }
     }

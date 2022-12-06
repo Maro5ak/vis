@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Net.Mail;
 using System.Security.Cryptography;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using DataLayer;
 using ExternalLibraries;
@@ -59,7 +61,10 @@ namespace BusinessLayer {
             Email = email;
             Phone = phone;
             Address = address;
+
         }
+
+       
         public override void Insert() {
             using (SqlConnection conn = new SqlConnection(connectionString)) {
                 conn.Open();

@@ -20,7 +20,12 @@ namespace PresentationLayer {
             Runtime.loginState = true;
             User user = new User();
             Customer customer;
-            user.Register(firstNameBox.Text, lastNameBox.Text, emailBox.Text, passwordBox.Text, Int32.Parse(phoneBox.Text), addressBox.Text, out customer);
+            Int32.TryParse(phoneBox.Text, out int phoneNum);
+            if (!user.Register(firstNameBox.Text, lastNameBox.Text, emailBox.Text, passwordBox.Text, phoneNum, addressBox.Text, out customer, out string msg)) {
+                MessageBox.Show(msg);
+                return;
+            }
+            
             Runtime.loggedIn = customer.Id;
             var frm = new InventoryUI();
             frm.Location = this.Location;

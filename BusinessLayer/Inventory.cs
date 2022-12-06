@@ -12,9 +12,21 @@ namespace BusinessLayer {
         public static void init() {
             for (int i = 1; ; i++) {
                 Instrument tmp = InventoryFinder.Find(i);
+                
                 if (tmp == null) break;
-                inventoryMap.Add(i, tmp);
+                if (tmp.Quantity != 0)
+                    inventoryMap.Add(i, tmp);
             }
+        }
+
+        public static HashSet<string> GetTypes() {
+            HashSet<string> types = new HashSet<string>();
+
+            foreach (Instrument i in inventoryMap.Values) {
+                types.Add(i.Type);
+            }
+
+            return types; 
         }
 
     }

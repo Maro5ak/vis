@@ -25,6 +25,7 @@
         private void InitializeComponent() {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InventoryUI));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.instrumentsManagerBtn = new System.Windows.Forms.Button();
             this.logoBtn = new System.Windows.Forms.Button();
             this.cartBtn = new System.Windows.Forms.Button();
             this.profileBtn = new System.Windows.Forms.Button();
@@ -35,11 +36,29 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.panel1.Controls.Add(this.instrumentsManagerBtn);
             this.panel1.Controls.Add(this.logoBtn);
             this.panel1.Location = new System.Drawing.Point(0, 1);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(924, 59);
             this.panel1.TabIndex = 8;
+            // 
+            // instrumentsManagerBtn
+            // 
+            this.instrumentsManagerBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.instrumentsManagerBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.instrumentsManagerBtn.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.instrumentsManagerBtn.FlatAppearance.BorderSize = 4;
+            this.instrumentsManagerBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.instrumentsManagerBtn.Font = new System.Drawing.Font("Segoe UI", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.instrumentsManagerBtn.ForeColor = System.Drawing.Color.White;
+            this.instrumentsManagerBtn.Location = new System.Drawing.Point(694, 3);
+            this.instrumentsManagerBtn.Name = "instrumentsManagerBtn";
+            this.instrumentsManagerBtn.Size = new System.Drawing.Size(75, 53);
+            this.instrumentsManagerBtn.TabIndex = 10;
+            this.instrumentsManagerBtn.Text = "Instruments Manager";
+            this.instrumentsManagerBtn.UseVisualStyleBackColor = false;
+            this.instrumentsManagerBtn.Click += new System.EventHandler(this.instrumentsManagerBtn_Click);
             // 
             // logoBtn
             // 
@@ -122,5 +141,6 @@
         private Button cartBtn;
         private Button profileBtn;
         private TableLayoutPanel inventoryLayout;
+        private Button instrumentsManagerBtn;
     }
 }

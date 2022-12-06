@@ -23,13 +23,7 @@ namespace PresentationLayer {
         }
 
         private void logoBtn_Click(object sender, EventArgs e) {
-
-            var frm = new InventoryUI();
-            frm.Location = this.Location;
-            frm.StartPosition = FormStartPosition.Manual;
-            frm.FormClosing += delegate { this.Close(); };
-            frm.Show();
-            this.Hide();
+            SceneManager.ChangeScene(this, new InventoryUI());
         }
 
         private void saveBtn_Click(object sender, EventArgs e) {
@@ -44,21 +38,11 @@ namespace PresentationLayer {
         }
 
         private void ordersBtn_Click(object sender, EventArgs e) {
-            var frm = new OrdersPage();
-            frm.Location = this.Location;
-            frm.StartPosition = FormStartPosition.Manual;
-            frm.FormClosing += delegate { this.Close(); };
-            frm.Show();
-            this.Hide();
+            SceneManager.ChangeScene(this, new OrdersPage());
         }
 
         private void rentalBtn_Click(object sender, EventArgs e) {
-            var frm = new RentalsPage();
-            frm.Location = this.Location;
-            frm.StartPosition = FormStartPosition.Manual;
-            frm.FormClosing += delegate { this.Close(); };
-            frm.Show();
-            this.Hide();
+            SceneManager.ChangeScene(this, new RentalsPage());
         }
     }
 }
