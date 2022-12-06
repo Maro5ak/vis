@@ -107,3 +107,4 @@ C:\Users\maros\source\repos\VIS\vis\PresentationLayer\obj\Debug\net6.0-windows\P
 C:\Users\maros\source\repos\VIS\vis\PresentationLayer\obj\Debug\net6.0-windows\PresentationLayer.RentalsPage.resources
 C:\Users\maros\source\repos\VIS\vis\PresentationLayer\obj\Debug\net6.0-windows\PresentationLayer.TicketResolve.resources
 C:\Users\maros\source\repos\VIS\vis\PresentationLayer\obj\Debug\net6.0-windows\PresentationLayer.InstrumentAddScreen.resources
+C:\Users\maros\source\repos\VIS\vis\PresentationLayer\obj\Debug\net6.0-windows\PresentationLayer.RentalDetailsPage.resources

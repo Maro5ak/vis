@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
+using System.Diagnostics.Metrics;
 using System.Linq;
 using System.Net;
 using System.Security.Cryptography;
@@ -95,6 +96,44 @@ namespace DataLayer {
                     return data;
                 }
 
+            }
+        }
+
+        public static void ExtendReturnTime(int id, DateTime date) {
+            string query = "UPDATE rental SET end_date = @date WHERE id = @id";
+            using (SqlConnection conn = new SqlConnection(connectionString)) {
+                conn.Open();
+
+                using (SqlCommand cmd = new SqlCommand(query, conn)) {
+                    cmd.Parameters.AddWithValue("@date", date);
+                    cmd.Parameters.AddWithValue("@id", id);
+
+                    Logger.Log(cmd.ExecuteNonQuery() + " Extend rental date");
+                }
+            }
+        }
+
+        public static List<string> GetRentalById(int id) {
+            string query = "SELECT r.instrument_id, CAST(r.start_date AS DATE), CAST(r.end_date AS DATE), r.penalty, r.payment_id FROM rental r WHERE r.id = @id";
+            using (SqlConnection conn = new SqlConnection(connectionString)) {
+                conn.Open();
+                using(SqlCommand cmd = new SqlCommand(query, conn)) {
+                    cmd.Parameters.AddWithValue("@id", id);
+                    List<string> data = new List<string>();
+                    SqlDataReader reader = cmd.ExecuteReader();
+                    reader.Read();
+                    if (reader.HasRows) {
+                        data.Add(reader[0].ToString());
+                        data.Add(reader[1].ToString());
+                        data.Add(reader[2].ToString());
+                        data.Add(reader[3].ToString());
+                        data.Add(reader[4].ToString());
+
+                        return data;
+                    }
+
+                    return null;
+                }
             }
         }
     }

@@ -33,7 +33,7 @@ namespace PresentationLayer {
                 label.Font = new Font("Seoge UI", 9);
                 label.BackColor = Color.LightGray;
                 label.TextAlign = ContentAlignment.MiddleLeft;
-                //label.Click += new EventHandler(HandleRemoveItem_Click);
+                label.Click += new EventHandler(HandleOpenDetails_Click);
                 label.Text = data[i];
                 if (swap) label.BackColor = Color.LightSlateGray;
                 rentalList.Controls.Add(label);
@@ -53,6 +53,13 @@ namespace PresentationLayer {
 
         private void logoBtn_Click(object sender, EventArgs e) {
             SceneManager.ChangeScene(this, new InventoryUI());
+        }
+
+        private void HandleOpenDetails_Click(object sender, EventArgs e) {
+            Label obj = (Label)sender;
+            int rentalId = Int32.Parse(obj.Text.Substring(0, obj.Text.IndexOf('|') - 1));
+            SceneManager.ChangeScene(this, new RentalDetailsPage(rentalId));
+
         }
     }
     

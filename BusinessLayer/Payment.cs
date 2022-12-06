@@ -16,9 +16,10 @@ namespace BusinessLayer {
 
     public class Payment : IActiveRecord<Payment> {
         private readonly string connectionString;
-        private readonly string INSERT = "INSERT INTO payment (rental_or_order, payment_method, date, amount) VALUES (@choice, @method, @date, @amount)";
-        private readonly string GET_LAST_ID = "SELECT TOP 1 id FROM payment ORDER BY id DESC";
-        private readonly string REMOVE_PAYMENT = "DELETE FROM payment WHERE id = @id";
+        private const string INSERT = "INSERT INTO payment (rental_or_order, payment_method, date, amount) VALUES (@choice, @method, @date, @amount)";
+        private const string GET_LAST_ID = "SELECT TOP 1 id FROM payment ORDER BY id DESC";
+        private const string REMOVE_PAYMENT = "DELETE FROM payment WHERE id = @id";
+        private const string SELECT_ID = "SELECT id, payment_method, amount FROM payment WHERE id = @id";
         public enum PaymentMethodEnum {
             CARD,
             CASH,
@@ -43,13 +44,20 @@ namespace BusinessLayer {
             else if (method == Payment.PaymentMethodEnum.TRANSFER) return "Transfer";
             else return "card";
         }
+        private static PaymentMethodEnum GetStringEnum(string method) {
+            if (method == "Paypal") return Payment.PaymentMethodEnum.CARD;
+            else if (method == "Cash") return Payment.PaymentMethodEnum.CASH;
+            else if (method == "Transfer") return Payment.PaymentMethodEnum.TRANSFER;
+            else return PaymentMethodEnum.CARD;
+        }
+
 
         private string GetEnumString(RentalOrder method) {
             if (method == RentalOrder.RENTAL) return "Rental";
             else return "Order";
         }
 
-        public Payment(int amount, PaymentMethodEnum paymentMethod, RentalOrder itemPayedFor) {
+        public Payment(int amount, PaymentMethodEnum paymentMethod, RentalOrder itemPayedFor, int id = -1) {
             connectionString = DatabaseConnector.GetBuilder().ConnectionString;
             Id = GetLastId();
             Amount = amount;
@@ -77,6 +85,23 @@ namespace BusinessLayer {
                         return (int)reader[0] + 1;
                     }
                     else return 1;
+                }
+            }
+        }
+
+        public static Payment Find(int id) {
+            using (SqlConnection conn = new SqlConnection(DatabaseConnector.GetBuilder().ConnectionString)) {
+                conn.Open();
+
+                using (SqlCommand cmd = new SqlCommand(SELECT_ID, conn)) {
+                    cmd.Parameters.AddWithValue("@id", id);
+                    SqlDataReader reader = cmd.ExecuteReader();
+
+                    reader.Read();
+                    if (reader.HasRows) {
+                        return new Payment(Int32.Parse(reader[2].ToString()), GetStringEnum(reader[1].ToString()), RentalOrder.RENTAL, Int32.Parse(reader[0].ToString()));
+                    }
+                    else return null;
                 }
             }
         }
