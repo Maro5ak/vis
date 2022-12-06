@@ -81,19 +81,20 @@ namespace BusinessLayer {
             }
         }
 
-        public void Delete() {
+        public void Delete(out string msg) {
             using (SqlConnection conn = new SqlConnection(connectionString)) {
                 conn.Open();
                 using (SqlCommand cmd = new SqlCommand(REMOVE_PAYMENT, conn)) {
                     cmd.Parameters.AddWithValue("@id", Id);
 
+                    msg = "deleted payment";
                     Logger.Log(cmd.ExecuteNonQuery() + " Delete payment");
                 }
             }
         }
 
         
-        public void Insert() {
+        public void Insert(out string msg) {
             using (SqlConnection conn = new SqlConnection(connectionString)) {
                 conn.Open();
                 using (SqlCommand cmd = new SqlCommand(INSERT, conn)) {
@@ -102,13 +103,14 @@ namespace BusinessLayer {
                     cmd.Parameters.AddWithValue("@method", GetEnumString(this.PaymentMethod));
                     cmd.Parameters.AddWithValue("@date", Date);
                     cmd.Parameters.AddWithValue("@amount", Amount);
-                    
+
+                    msg = "Successfully created payment";
                     Logger.Log(cmd.ExecuteNonQuery() + " Insert payment");
                 }
             }
         }
 
-        public void Update() {
+        public void Update(out string msg) {
             throw new NotImplementedException();
         }
     }

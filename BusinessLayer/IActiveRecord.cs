@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace BusinessLayer {
     public interface IActiveRecord<T> {
-        void Insert();
-        void Update();
-        void Delete();
+        void Insert(out string msg);
+        void Update(out string msg);
+        void Delete(out string msg);
 
     }
 }

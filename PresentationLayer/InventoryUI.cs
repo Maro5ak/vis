@@ -9,13 +9,16 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BusinessLayer;
+using DataLayer;
 using ExternalLibraries;
 
 namespace PresentationLayer {
     public partial class InventoryUI : Form {
 
         public InventoryUI() {
+            Inventory.init();
             InitializeComponent();
+            
             instrumentsManagerBtn.Visible = false;
             if (Runtime.privilegedMode) {
                 instrumentsManagerBtn.Visible = true;
@@ -31,23 +34,25 @@ namespace PresentationLayer {
             for (int i = 0; i < columnCount; i++) inventoryLayout.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 100));
             for (int i = 0; i < rowCount; i++) inventoryLayout.RowStyles.Add(new RowStyle(SizeType.Absolute, 100));
 
-            int buttons = 0;
-            for(int i = 0; i < rowCount; i++) {
-                if (buttons == instrumentCount) break;
-                for (int j = 0; j < columnCount; j++) {
-                    if (buttons == instrumentCount) break;
+            int index = 1;
+            while(index <= Inventory.inventoryMap.Keys.Max()) {
+                if (Inventory.inventoryMap.ContainsKey(index)) {
                     Button btn = new Button();
-                    btn.Text = Inventory.inventoryMap[buttons + 1].Manufacturer + "\n" + Inventory.inventoryMap[buttons + 1].Name;
+                    btn.Text = Inventory.inventoryMap[index].Manufacturer + "\n" + Inventory.inventoryMap[index].Name;
                     btn.Font = new Font("Segoe UI", 9, FontStyle.Bold);
-                    btn.Name = "btn" + (buttons + 1);
+                    btn.Name = "btn" + (index);
                     btn.Height = 100;
                     btn.Width = 100;
                     btn.BackColor = Color.Gray;
-                    inventoryLayout.Controls.Add(btn, j, i);
+                    inventoryLayout.Controls.Add(btn);
                     btn.Click += new EventHandler(instrumentButtonClick);
-                    buttons++;
+
                 }
+                index++;
+                
             }
+                
+            
         }
 
         private void instrumentButtonClick(object sender, EventArgs e) {

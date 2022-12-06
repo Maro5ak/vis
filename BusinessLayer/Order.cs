@@ -36,7 +36,7 @@ namespace BusinessLayer {
 
         public void CancelOrder() {
             OrderDataGW.RemoveOrder(Customer.Id, Payment.Id, Customer.Address);
-            Payment.Delete();
+            Payment.Delete(out string msg);
         }
     }
 }

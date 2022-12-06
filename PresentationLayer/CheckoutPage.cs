@@ -93,13 +93,13 @@ namespace PresentationLayer {
                 if(i is Order) {
                     if ((i as Order).OrderItems.Count != 0) {
                         (i as Order).Payment = new Payment(i.SumPrices() + paymentAddon + deliveryAddon, method, Payment.RentalOrder.ORDER);
-                        (i as Order).Payment.Insert();
+                        (i as Order).Payment.Insert(out string msg);
                         (i as Order).CreateOrder();
                     }
                 }
                 else {
                     (i as Rental).Payment = new Payment(i.SumPrices() + paymentAddon + deliveryAddon, method, Payment.RentalOrder.RENTAL);
-                    (i as Rental).Payment.Insert();
+                    (i as Rental).Payment.Insert(out string msg);
                     (i as Rental).CreateRental();
                 }
                  

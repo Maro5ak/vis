@@ -65,7 +65,7 @@ namespace BusinessLayer {
         }
 
        
-        public override void Insert() {
+        public override void Insert(out string msg) {
             using (SqlConnection conn = new SqlConnection(connectionString)) {
                 conn.Open();
                 using (SqlCommand cmd = new SqlCommand(INSERT_USER, conn)) {
@@ -76,39 +76,34 @@ namespace BusinessLayer {
                     cmd.Parameters.AddWithValue("@address", Address);
                     cmd.Parameters.AddWithValue("@phone", Phone);
 
+                    msg = "Successfully created new Customer";
                     Logger.Log(cmd.ExecuteNonQuery());
                 }
             }
         }
-        public override void Update() {
+        public override void Update(out string msg) {
 
             using (SqlConnection conn = new SqlConnection(connectionString)) {
                 conn.Open();
-                if (Password != null) {
-                    using (SqlCommand cmd = new SqlCommand(UPDATE_USER, conn)) {
-                        cmd.Parameters.AddWithValue("@id", Id);
-                        cmd.Parameters.AddWithValue("@firstName", Firstname);
-                        cmd.Parameters.AddWithValue("@lastName", Lastname);
-                        cmd.Parameters.AddWithValue("@email", Email);
+                using (SqlCommand cmd = new SqlCommand()) {
+                    cmd.CommandText = UPDATE_USER_NO_PW;
+                    cmd.Connection = conn;
+                    cmd.Parameters.AddWithValue("@id", Id);
+                    cmd.Parameters.AddWithValue("@firstName", Firstname);
+                    cmd.Parameters.AddWithValue("@lastName", Lastname);
+                    cmd.Parameters.AddWithValue("@email", Email);
+                    cmd.Parameters.AddWithValue("@address", Address);
+                    cmd.Parameters.AddWithValue("@phone", Phone);
+
+                    if (Password != null) {
+                        cmd.CommandText = UPDATE_USER;
                         cmd.Parameters.AddWithValue("@password", Password);
-                        cmd.Parameters.AddWithValue("@address", Address);
-                        cmd.Parameters.AddWithValue("@phone", Phone);
 
-                        Logger.Log(cmd.ExecuteNonQuery() + " Updated customer rows");
                     }
-                }
-                else {
-                    using (SqlCommand cmd = new SqlCommand(UPDATE_USER_NO_PW, conn)) {
-                        cmd.Parameters.AddWithValue("@id", Id);
-                        cmd.Parameters.AddWithValue("@firstName", Firstname);
-                        cmd.Parameters.AddWithValue("@lastName", Lastname);
-                        cmd.Parameters.AddWithValue("@email", Email);
-                        cmd.Parameters.AddWithValue("@address", Address);
-                        cmd.Parameters.AddWithValue("@phone", Phone);
-
-                        Logger.Log(cmd.ExecuteNonQuery() + " Updated customer rows, no pw");
-                    }
-                }
+                    msg = "Successfully updated Customer";
+                    Logger.Log(cmd.ExecuteNonQuery() + " Updated customer");
+                }                    
+                
             }
         }
     }

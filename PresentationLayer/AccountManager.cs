@@ -34,7 +34,7 @@ namespace PresentationLayer {
                 updateCustomer = new Customer(Runtime.loggedIn, name[0], name[1], emailBox.Text, Int32.Parse(phoneBox.Text), addressBox.Text);
             else updateCustomer = new Customer(Runtime.loggedIn, name[0], name[1], emailBox.Text, Int32.Parse(phoneBox.Text), pw, addressBox.Text);
             current = updateCustomer;
-            current.Update();
+            current.Update(out string msg);
         }
 
         private void ordersBtn_Click(object sender, EventArgs e) {

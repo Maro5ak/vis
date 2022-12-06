@@ -38,6 +38,7 @@
             this.rentLabel = new System.Windows.Forms.Label();
             this.addToCartBtn = new System.Windows.Forms.Button();
             this.rentCheckBox = new System.Windows.Forms.CheckBox();
+            this.quantityLabel = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -199,11 +200,21 @@
             this.rentCheckBox.Text = "Rent item";
             this.rentCheckBox.UseVisualStyleBackColor = true;
             // 
+            // quantityLabel
+            // 
+            this.quantityLabel.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.quantityLabel.Location = new System.Drawing.Point(493, 333);
+            this.quantityLabel.Name = "quantityLabel";
+            this.quantityLabel.Size = new System.Drawing.Size(152, 19);
+            this.quantityLabel.TabIndex = 22;
+            this.quantityLabel.Text = "quantity";
+            // 
             // InstrumentDetails
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(922, 491);
+            this.Controls.Add(this.quantityLabel);
             this.Controls.Add(this.rentCheckBox);
             this.Controls.Add(this.addToCartBtn);
             this.Controls.Add(this.rentLabel);
@@ -241,5 +252,6 @@
         private Label rentLabel;
         private Button addToCartBtn;
         private CheckBox rentCheckBox;
+        private Label quantityLabel;
     }
 }

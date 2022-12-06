@@ -23,12 +23,17 @@ namespace PresentationLayer {
             nameLabel.Text = currentInstrument.Name;
             typeLabel.Text = currentInstrument.Type;
             buyLabel.Text = $"Price to buy: ${currentInstrument.PriceBuy}";
-            int priceRent = currentInstrument.PriceRent;
-            if (priceRent == 0) {
+            if(currentInstrument.Quantity > 0)
+                quantityLabel.Text = $"In stock: {currentInstrument.Quantity}";
+            else {
+                quantityLabel.Text = "Out of stock";
+                cartBtn.Enabled = false;
+            }
+            if (!currentInstrument.Rentable) {
                 rentLabel.Hide();
                 rentCheckBox.Hide();
             }
-            else rentLabel.Text = $"Price to rent: ${priceRent}";
+            else rentLabel.Text = $"Price to rent: ${currentInstrument.PriceRent}";
 
 
         }

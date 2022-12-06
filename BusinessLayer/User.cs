@@ -61,10 +61,14 @@ namespace BusinessLayer {
             return false;
         }
 
-        public virtual void Delete() {
+        public virtual void Delete(out string msg) {
+            msg = "";
+            return;
         }
 
-        public virtual void Insert() {
+        public virtual void Insert(out string msg) {
+            msg = "";
+            return;
         }
         private int GetLastIdUsed() {
             using (SqlConnection conn = new SqlConnection(DatabaseConnector.GetBuilder().ConnectionString)) {
@@ -83,11 +87,13 @@ namespace BusinessLayer {
                 return false;
             }
             registeredCustomer = new Customer(GetLastIdUsed() + 1, firstName, lastName, email, phone, Utils.GetHashDataString(password), address);
-            registeredCustomer.Insert();
+            registeredCustomer.Insert(out string msgOut);
             return true;
         }
 
-        public virtual void Update() {
+        public virtual void Update(out string msg) {
+            msg = "";
+            return;
         }
     }
 }

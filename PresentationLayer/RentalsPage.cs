@@ -32,7 +32,7 @@ namespace PresentationLayer {
                 label.Name = $"item{i}";
                 label.Font = new Font("Seoge UI", 9);
                 label.BackColor = Color.LightGray;
-                label.TextAlign = ContentAlignment.MiddleCenter;
+                label.TextAlign = ContentAlignment.MiddleLeft;
                 //label.Click += new EventHandler(HandleRemoveItem_Click);
                 label.Text = data[i];
                 if (swap) label.BackColor = Color.LightSlateGray;

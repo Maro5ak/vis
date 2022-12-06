@@ -10,14 +10,19 @@ namespace BusinessLayer {
         public static Dictionary<int, Instrument> inventoryMap = new Dictionary<int, Instrument>();
 
         public static void init() {
-            for (int i = 1; ; i++) {
+            int rows = InventoryFinder.GetRows();
+            //MUST BE != OTHERWISE THE THING WILL LOOP INFINITELY
+            for (int i = 1; inventoryMap.Count != rows; i++) {
+                if (inventoryMap.ContainsKey(i)) continue;
                 Instrument tmp = InventoryFinder.Find(i);
                 
-                if (tmp == null) break;
-                if (tmp.Quantity != 0)
-                    inventoryMap.Add(i, tmp);
+                if (tmp == null) continue;
+                
+                inventoryMap.Add(i, tmp);
+                
             }
         }
+
 
         public static HashSet<string> GetTypes() {
             HashSet<string> types = new HashSet<string>();
@@ -29,5 +34,14 @@ namespace BusinessLayer {
             return types; 
         }
 
+        public static List<string> GetInstrumentNames() {
+            List<string> names = new List<string>();
+            names.Add("0; New");
+            foreach (var i in inventoryMap.Values) {
+                names.Add(i.Id + "; " + Utils.Concat(i.Manufacturer, i.Name));
+            }
+            
+            return names;
+        }
     }
 }
