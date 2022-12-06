@@ -74,7 +74,7 @@ namespace BusinessLayer {
                     SqlDataReader reader = cmd.ExecuteReader();
                     reader.Read();
                     if (reader.HasRows) {
-                        return (int)reader[0];
+                        return (int)reader[0] + 1;
                     }
                     else return 1;
                 }

@@ -1,6 +1,7 @@
 ﻿using ExternalLibraries;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Net;
@@ -8,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace DataLayer {
-    public class OrderTransactionScript {
+    public class OrderDataGW {
         private static readonly string connectionString = DatabaseConnector.GetBuilder().ConnectionString;
         public static int GetLastOrder() {
             string query = "SELECT TOP 1 id FROM \"order\" ORDER BY id DESC";
@@ -67,6 +68,38 @@ namespace DataLayer {
 
                     Logger.Log(cmd.ExecuteNonQuery() + " Delete from order");
                 }
+            }
+        }
+
+        public static List<string> GetOrdersForUser(int id) {
+            string query = "SELECT o.id, i.name, i.instrument_type, i.manufacturer, p.amount, p.date\n" +
+                "FROM \"order\" o\n" +
+                "JOIN customer c ON o.customer_id = c.id\n" +
+                "JOIN ordered_items oi ON o.id = oi.order_id\n" +
+                "JOIN instrument i ON oi.instrument_id = i.id\n" +
+                "JOIN payment p ON o.payment_id = p.id\n" +
+                "WHERE c.id = @id";
+            using (SqlConnection conn = new SqlConnection(connectionString)) {
+                conn.Open();
+                using (SqlCommand cmd = new SqlCommand(query, conn)) {
+                    cmd.Parameters.AddWithValue("@id", id);
+                    SqlDataReader reader = cmd.ExecuteReader();
+                    List<string> data = new List<string>();
+                    while (reader.Read()) {
+                        StringBuilder sb = new StringBuilder();
+
+                        sb.Append(reader[0] + " | ");
+                        sb.Append(reader[2] + " ");
+                        sb.Append(reader[3] + " ");
+                        sb.Append(reader[1] + " | ");
+                        sb.Append("$" + reader[4] + " ");
+                        sb.Append(reader[5]);
+
+                        data.Add(sb.ToString());
+                    }
+                    return data;
+                }
+                
             }
         }
     }

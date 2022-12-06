@@ -176,6 +176,7 @@
             this.ordersBtn.TabIndex = 11;
             this.ordersBtn.Text = "Orders";
             this.ordersBtn.UseVisualStyleBackColor = false;
+            this.ordersBtn.Click += new System.EventHandler(this.ordersBtn_Click);
             // 
             // rentalBtn
             // 
@@ -190,6 +191,7 @@
             this.rentalBtn.TabIndex = 12;
             this.rentalBtn.Text = "Rented Items";
             this.rentalBtn.UseVisualStyleBackColor = false;
+            this.rentalBtn.Click += new System.EventHandler(this.rentalBtn_Click);
             // 
             // saveBtn
             // 

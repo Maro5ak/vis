@@ -7,14 +7,16 @@ using DataLayer;
 namespace BusinessLayer {
     public class Cart {
         public static List<ICart> Items = new List<ICart>();
-        public static List<Instrument> ActiveOrder = new List<Instrument>();
+        public static List<CartItem> CartItems = new List<CartItem>();
         public static Customer Customer { get; set; }
         
         public static void Add(ICart item) {
             
             Items.Add(item);
         }
-
+        public static void Add(CartItem item) {
+            CartItems.Add(item);
+        }
         public static int SumPrices() {
             int res = 0;
             foreach(ICart i in Items) {
@@ -36,7 +38,7 @@ namespace BusinessLayer {
         }
 
         public static int GetOrderId() {
-            return OrderTransactionScript.GetLastOrder();
+            return OrderDataGW.GetLastOrder();
         }
     }
 }

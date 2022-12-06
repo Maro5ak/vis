@@ -25,7 +25,7 @@ namespace BusinessLayer {
         }
 
         public void CreateRental() {
-            RentalTransactionScript.InsertRental(StartTime, EndTime, (!Penalty ? '0' : '1'), Customer.Id, Instrument.Id, Customer.Address, Payment.Id);
+            RentalDataGW.InsertRental(StartTime, EndTime, (!Penalty ? '0' : '1'), Customer.Id, Instrument.Id, Customer.Address, Payment.Id);
         }
 
         public void CancelRental() {
@@ -39,7 +39,7 @@ namespace BusinessLayer {
         }
 
         public int GetLastId() {
-            return RentalTransactionScript.GetLastId();
+            return RentalDataGW.GetLastId();
         }
 
         public int SumPrices() {

@@ -42,5 +42,23 @@ namespace PresentationLayer {
             current = updateCustomer;
             current.Update();
         }
+
+        private void ordersBtn_Click(object sender, EventArgs e) {
+            var frm = new OrdersPage();
+            frm.Location = this.Location;
+            frm.StartPosition = FormStartPosition.Manual;
+            frm.FormClosing += delegate { this.Close(); };
+            frm.Show();
+            this.Hide();
+        }
+
+        private void rentalBtn_Click(object sender, EventArgs e) {
+            var frm = new RentalsPage();
+            frm.Location = this.Location;
+            frm.StartPosition = FormStartPosition.Manual;
+            frm.FormClosing += delegate { this.Close(); };
+            frm.Show();
+            this.Hide();
+        }
     }
 }

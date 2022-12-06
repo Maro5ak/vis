@@ -16,3 +16,42 @@
 [12/5/2022 7:29:01 AM]: 1 Insert into rental
 [12/5/2022 7:31:26 AM]: 1 Insert payment
 [12/5/2022 7:31:26 AM]: 1 Insert into rental
+[12/5/2022 11:48:25 AM]: 1 Insert payment
+[12/5/2022 11:48:25 AM]: 1 Insert into order
+[12/5/2022 11:48:25 AM]: 1 Insert into ordered_items
+[12/5/2022 2:50:53 PM]: 1 Insert payment
+[12/5/2022 2:50:53 PM]: 1 Insert into order
+[12/5/2022 2:50:53 PM]: 1 Insert into ordered_items
+[12/5/2022 2:50:53 PM]: 1 Insert into ordered_items
+[12/5/2022 2:58:22 PM]: 1 Insert payment
+[12/5/2022 2:58:22 PM]: 1 Insert into rental
+[12/5/2022 2:58:22 PM]: 1 Insert payment
+[12/5/2022 2:58:22 PM]: 1 Insert into rental
+[12/5/2022 2:58:22 PM]: 1 Insert payment
+[12/5/2022 2:58:22 PM]: 1 Insert into rental
+[12/5/2022 2:58:22 PM]: 1 Insert payment
+[12/5/2022 2:58:22 PM]: 1 Insert into rental
+[12/5/2022 2:58:22 PM]: 1 Insert payment
+[12/5/2022 2:58:23 PM]: 1 Insert into rental
+[12/5/2022 2:58:23 PM]: 1 Insert payment
+[12/5/2022 2:58:23 PM]: 1 Insert into rental
+[12/5/2022 2:58:23 PM]: 1 Insert payment
+[12/5/2022 2:58:23 PM]: 1 Insert into rental
+[12/5/2022 2:58:23 PM]: 1 Insert payment
+[12/5/2022 2:58:23 PM]: 1 Insert into rental
+[12/5/2022 2:58:23 PM]: 1 Insert payment
+[12/5/2022 2:58:23 PM]: 1 Insert into rental
+[12/5/2022 2:58:23 PM]: 1 Insert payment
+[12/5/2022 2:58:23 PM]: 1 Insert into rental
+[12/5/2022 2:58:23 PM]: 1 Insert payment
+[12/5/2022 2:58:23 PM]: 1 Insert into rental
+[12/5/2022 2:58:23 PM]: 1 Insert payment
+[12/5/2022 2:58:23 PM]: 1 Insert into rental
+[12/5/2022 2:58:23 PM]: 1 Insert payment
+[12/5/2022 2:58:23 PM]: 1 Insert into rental
+[12/5/2022 2:58:23 PM]: 1 Insert payment
+[12/5/2022 2:58:23 PM]: 1 Insert into rental
+[12/5/2022 2:58:23 PM]: 1 Insert payment
+[12/5/2022 2:58:23 PM]: 1 Insert into rental
+[12/5/2022 2:58:23 PM]: 1 Insert payment
+[12/5/2022 2:58:23 PM]: 1 Insert into rental

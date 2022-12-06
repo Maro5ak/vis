@@ -58,10 +58,10 @@ namespace PresentationLayer {
 
         private void addToCartBtn_Click(object sender, EventArgs e) {
             if (rentCheckBox.Checked) {
-                Cart.Add(new Rental(currentInstrument, new Customer(Runtime.loggedIn), DateTime.Now));
+                Cart.Add(new CartItem(currentInstrument, Payment.RentalOrder.RENTAL));
             }
             else {
-                Cart.ActiveOrder.Add(currentInstrument);
+                Cart.Add(new CartItem(currentInstrument, Payment.RentalOrder.ORDER));
             }
         }
 

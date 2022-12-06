@@ -103,3 +103,5 @@ C:\Users\maros\source\repos\VIS\vis\PresentationLayer\obj\Debug\net6.0-windows\P
 C:\Users\maros\source\repos\VIS\vis\PresentationLayer\obj\Debug\net6.0-windows\ref\PresentationLayer.dll
 C:\Users\maros\source\repos\VIS\vis\PresentationLayer\obj\Debug\net6.0-windows\PresentationLayer.CheckoutPage.resources
 C:\Users\maros\source\repos\VIS\vis\PresentationLayer\obj\Debug\net6.0-windows\PresentationLayer.OrderSuccess.resources
+C:\Users\maros\source\repos\VIS\vis\PresentationLayer\obj\Debug\net6.0-windows\PresentationLayer.OrdersPage.resources
+C:\Users\maros\source\repos\VIS\vis\PresentationLayer\obj\Debug\net6.0-windows\PresentationLayer.RentalsPage.resources

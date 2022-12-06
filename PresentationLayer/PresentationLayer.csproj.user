@@ -22,10 +22,16 @@
     <Compile Update="LoginPage.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="OrdersPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="OrderSuccess.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="RegisterPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="RentalsPage.cs">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>
