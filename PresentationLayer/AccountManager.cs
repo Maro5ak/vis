@@ -44,5 +44,9 @@ namespace PresentationLayer {
         private void rentalBtn_Click(object sender, EventArgs e) {
             SceneManager.ChangeScene(this, new RentalsPage());
         }
+
+        private void cartBtn_Click(object sender, EventArgs e) {
+            SceneManager.ChangeScene(this, new CartPage());
+        }
     }
 }

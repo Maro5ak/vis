@@ -30,6 +30,8 @@
             this.cartBtn = new System.Windows.Forms.Button();
             this.profileBtn = new System.Windows.Forms.Button();
             this.inventoryLayout = new System.Windows.Forms.TableLayoutPanel();
+            this.xmlLinkLabel = new System.Windows.Forms.LinkLabel();
+            this.xmlBtn = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -118,11 +120,35 @@
             this.inventoryLayout.Size = new System.Drawing.Size(549, 400);
             this.inventoryLayout.TabIndex = 9;
             // 
+            // xmlLinkLabel
+            // 
+            this.xmlLinkLabel.LinkColor = System.Drawing.Color.Black;
+            this.xmlLinkLabel.Location = new System.Drawing.Point(12, 440);
+            this.xmlLinkLabel.Name = "xmlLinkLabel";
+            this.xmlLinkLabel.Size = new System.Drawing.Size(302, 42);
+            this.xmlLinkLabel.TabIndex = 10;
+            this.xmlLinkLabel.TabStop = true;
+            this.xmlLinkLabel.Text = "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
+            this.xmlLinkLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.xmlLinkLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.xmlLinkLabel_LinkClicked);
+            // 
+            // xmlBtn
+            // 
+            this.xmlBtn.Location = new System.Drawing.Point(92, 396);
+            this.xmlBtn.Name = "xmlBtn";
+            this.xmlBtn.Size = new System.Drawing.Size(124, 41);
+            this.xmlBtn.TabIndex = 11;
+            this.xmlBtn.Text = "Export XML";
+            this.xmlBtn.UseVisualStyleBackColor = true;
+            this.xmlBtn.Click += new System.EventHandler(this.xmlBtn_Click);
+            // 
             // InventoryUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(922, 491);
+            this.Controls.Add(this.xmlBtn);
+            this.Controls.Add(this.xmlLinkLabel);
             this.Controls.Add(this.inventoryLayout);
             this.Controls.Add(this.cartBtn);
             this.Controls.Add(this.profileBtn);
@@ -142,5 +168,7 @@
         private Button profileBtn;
         private TableLayoutPanel inventoryLayout;
         private Button instrumentsManagerBtn;
+        private LinkLabel xmlLinkLabel;
+        private Button xmlBtn;
     }
 }

@@ -74,3 +74,5 @@
 [12/6/2022 6:26:32 PM]: 31
 [12/6/2022 8:25:56 PM]: 1 Insert payment
 [12/6/2022 8:25:56 PM]: 1 Insert into rental
+[12/6/2022 10:11:57 PM]: 1 Updated customer
+[12/6/2022 10:25:29 PM]: 1

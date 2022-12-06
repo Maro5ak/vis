@@ -24,8 +24,10 @@ namespace BusinessLayer {
         public int PriceBuy { get; set; }
         public int PriceRent { get; set; }
         public int Deposit { get; set; }
-        public bool Rentable { get; private set; }
+        public bool Rentable { get; set; }
         public int Quantity { get; set; }
+
+        private Instrument() { }
         
         public Instrument(int id, string type, string manufacturer, string name, string description, int priceBuy, int priceRent = 0, int deposit = 0, int quantity = 0, bool rentable = true) {
             connectionString = DatabaseConnector.GetBuilder().ConnectionString;

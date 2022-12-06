@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Diagnostics.Metrics;
 using System.Drawing;
 using System.Linq;
@@ -14,14 +15,17 @@ using ExternalLibraries;
 
 namespace PresentationLayer {
     public partial class InventoryUI : Form {
-
+        private string pathToXml = string.Empty;
         public InventoryUI() {
             Inventory.init();
             InitializeComponent();
             
             instrumentsManagerBtn.Visible = false;
+            xmlBtn.Visible = false;
+            xmlLinkLabel.Visible = false;
             if (Runtime.privilegedMode) {
                 instrumentsManagerBtn.Visible = true;
+                xmlBtn.Visible = true;
             }
             int instrumentCount = Inventory.inventoryMap.Count;
             int columnCount = inventoryLayout.ColumnCount = 5;
@@ -79,6 +83,17 @@ namespace PresentationLayer {
 
         private void instrumentsManagerBtn_Click(object sender, EventArgs e) {
             SceneManager.ChangeScene(this, new InstrumentAddScreen());
+        }
+
+        private void xmlLinkLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e) {
+            Process.Start("explorer.exe", pathToXml);
+        }
+
+        private void xmlBtn_Click(object sender, EventArgs e) {
+            Inventory.ExportXML(out pathToXml);
+            xmlLinkLabel.Text = pathToXml;
+            xmlLinkLabel.Visible = true;
+
         }
     }
 }

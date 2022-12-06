@@ -71,6 +71,7 @@
             this.cartBtn.TabIndex = 1;
             this.cartBtn.Text = "Cart";
             this.cartBtn.UseVisualStyleBackColor = false;
+            this.cartBtn.Click += new System.EventHandler(this.cartBtn_Click);
             // 
             // profilePic
             // 

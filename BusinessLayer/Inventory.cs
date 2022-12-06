@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Serialization;
 using DataLayer;
 
 namespace BusinessLayer {
@@ -21,6 +22,16 @@ namespace BusinessLayer {
                 inventoryMap.Add(i, tmp);
                 
             }
+        }
+
+        public static void ExportXML(out string path) {
+            using (FileStream fs = new FileStream("inventory.xml", FileMode.Create)) {
+                XmlSerializer serializer = new XmlSerializer(typeof(List<Instrument>));
+
+                serializer.Serialize(fs, inventoryMap.Values.ToList());
+                path = fs.Name;
+            }
+
         }
 
 
