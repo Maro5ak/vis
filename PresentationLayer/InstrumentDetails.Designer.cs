@@ -25,6 +25,7 @@
         private void InitializeComponent() {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InstrumentDetails));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.deleteInstrumentBtn = new System.Windows.Forms.Button();
             this.logoBtn = new System.Windows.Forms.Button();
             this.cartBtn = new System.Windows.Forms.Button();
             this.profileBtn = new System.Windows.Forms.Button();
@@ -46,11 +47,25 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.panel1.Controls.Add(this.deleteInstrumentBtn);
             this.panel1.Controls.Add(this.logoBtn);
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(924, 59);
             this.panel1.TabIndex = 11;
+            // 
+            // deleteInstrumentBtn
+            // 
+            this.deleteInstrumentBtn.BackColor = System.Drawing.Color.Firebrick;
+            this.deleteInstrumentBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.deleteInstrumentBtn.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.deleteInstrumentBtn.Location = new System.Drawing.Point(663, 8);
+            this.deleteInstrumentBtn.Name = "deleteInstrumentBtn";
+            this.deleteInstrumentBtn.Size = new System.Drawing.Size(105, 46);
+            this.deleteInstrumentBtn.TabIndex = 23;
+            this.deleteInstrumentBtn.Text = "Delete";
+            this.deleteInstrumentBtn.UseVisualStyleBackColor = false;
+            this.deleteInstrumentBtn.Click += new System.EventHandler(this.deleteInstrumentBtn_Click);
             // 
             // logoBtn
             // 
@@ -253,5 +268,6 @@
         private Button addToCartBtn;
         private CheckBox rentCheckBox;
         private Label quantityLabel;
+        private Button deleteInstrumentBtn;
     }
 }

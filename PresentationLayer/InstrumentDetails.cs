@@ -16,6 +16,11 @@ namespace PresentationLayer {
         public InstrumentDetails(int id) {
             InitializeComponent();
             currentInstrument = Inventory.inventoryMap[id];
+            deleteInstrumentBtn.Visible = false;
+            if (Runtime.privilegedMode)
+                deleteInstrumentBtn.Visible = true;
+
+
             this.Text = $"Product: {currentInstrument.Manufacturer} {currentInstrument.Name}";
             instrumentLabel.Text = currentInstrument.Name;
             manufacturerLabel.Text = currentInstrument.Manufacturer;
@@ -63,6 +68,13 @@ namespace PresentationLayer {
 
         private void cartBtn_Click(object sender, EventArgs e) {
             SceneManager.ChangeScene(this, new CartPage());
+        }
+
+        private void deleteInstrumentBtn_Click(object sender, EventArgs e) {
+            Inventory.inventoryMap.Remove(currentInstrument.Id);
+            currentInstrument.Delete(out string msg);
+            MessageBox.Show(msg);
+            SceneManager.ChangeScene(this, new InventoryUI());
         }
     }
 }

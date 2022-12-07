@@ -56,7 +56,7 @@ namespace BusinessLayer {
                         if (DBNull.Value != reader[2] && (string)reader[2] == "1") {
                             Runtime.privilegedMode = true;
                         }
-                        
+                        Logger.Log(errorMsg);
                         return true;
                     }
                 }
@@ -92,6 +92,7 @@ namespace BusinessLayer {
             }
             registeredCustomer = new Customer(GetLastIdUsed() + 1, firstName, lastName, email, phone, Utils.GetHashDataString(password), address);
             registeredCustomer.Insert(out string msgOut);
+            Logger.Log(msgOut);
             return true;
         }
 

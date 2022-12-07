@@ -1,4 +1,5 @@
 ﻿using DataLayer;
+using ExternalLibraries;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -28,8 +29,13 @@ namespace BusinessLayer {
 
         public void CreateOrder() {
             OrderDataGW.InsertOrder(Customer.Id, Payment.Id, Customer.Address);
-            foreach (var i in OrderItems)
+            foreach (var i in OrderItems) {
                 OrderDataGW.InsertOrderItems(OrderDataGW.GetLastOrder(), i.Id);
+                Instrument current = i;
+                current.Quantity -= 1;
+                current.Update(out string msg);
+                Logger.Log(msg);
+            }
         }
 
 
@@ -37,6 +43,7 @@ namespace BusinessLayer {
         public void CancelOrder() {
             OrderDataGW.RemoveOrder(Customer.Id, Payment.Id, Customer.Address);
             Payment.Delete(out string msg);
+            Logger.Log(msg);
         }
     }
 }

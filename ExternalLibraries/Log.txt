@@ -1,5 +1,4 @@
-﻿[12/5/2022 7:00:48 AM]: 1
-[12/5/2022 7:05:45 AM]: 1 Insert into order
+﻿[12/5/2022 7:05:45 AM]: 1 Insert into order
 [12/5/2022 7:07:38 AM]: 1 Insert into order
 [12/5/2022 7:15:24 AM]: 1 Insert into order
 [12/5/2022 7:16:48 AM]: 1 Insert payment
@@ -78,3 +77,11 @@
 [12/6/2022 10:25:29 PM]: 1
 [12/7/2022 9:46:41 AM]: 0 Update payment
 [12/7/2022 9:46:41 AM]: 1 Extend rental date
+[12/7/2022 2:44:51 PM]: 1 Updated rows
+[12/7/2022 2:58:39 PM]: 1
+[12/7/2022 3:06:48 PM]: 
+[12/7/2022 3:07:51 PM]: 1 Insert payment
+[12/7/2022 3:07:51 PM]: 1 Insert into order
+[12/7/2022 3:07:51 PM]: 1 Insert into ordered_items
+[12/7/2022 3:07:51 PM]: 1 Updated rows
+[12/7/2022 3:07:51 PM]: Successfully Updated

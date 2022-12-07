@@ -37,7 +37,8 @@
             this.ordersBtn = new System.Windows.Forms.Button();
             this.rentalBtn = new System.Windows.Forms.Button();
             this.saveBtn = new System.Windows.Forms.Button();
-            this.ticketsBtn = new System.Windows.Forms.Button();
+            this.logFileLinkLabel = new System.Windows.Forms.LinkLabel();
+            this.logFileLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.profilePic)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -209,26 +210,35 @@
             this.saveBtn.UseVisualStyleBackColor = false;
             this.saveBtn.Click += new System.EventHandler(this.saveBtn_Click);
             // 
-            // ticketsBtn
+            // logFileLinkLabel
             // 
-            this.ticketsBtn.BackColor = System.Drawing.Color.Silver;
-            this.ticketsBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ticketsBtn.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.ticketsBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ticketsBtn.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.ticketsBtn.Location = new System.Drawing.Point(634, 370);
-            this.ticketsBtn.Name = "ticketsBtn";
-            this.ticketsBtn.Size = new System.Drawing.Size(101, 48);
-            this.ticketsBtn.TabIndex = 14;
-            this.ticketsBtn.Text = "Open Tickets";
-            this.ticketsBtn.UseVisualStyleBackColor = false;
+            this.logFileLinkLabel.LinkColor = System.Drawing.Color.Black;
+            this.logFileLinkLabel.Location = new System.Drawing.Point(59, 440);
+            this.logFileLinkLabel.Name = "logFileLinkLabel";
+            this.logFileLinkLabel.Size = new System.Drawing.Size(302, 42);
+            this.logFileLinkLabel.TabIndex = 15;
+            this.logFileLinkLabel.TabStop = true;
+            this.logFileLinkLabel.Text = "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
+            this.logFileLinkLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.logFileLinkLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.logFileLinkLabel_LinkClicked);
+            // 
+            // logFileLabel
+            // 
+            this.logFileLabel.AutoSize = true;
+            this.logFileLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.logFileLabel.Location = new System.Drawing.Point(59, 425);
+            this.logFileLabel.Name = "logFileLabel";
+            this.logFileLabel.Size = new System.Drawing.Size(67, 21);
+            this.logFileLabel.TabIndex = 16;
+            this.logFileLabel.Text = "Log File:";
             // 
             // AccountManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(922, 491);
-            this.Controls.Add(this.ticketsBtn);
+            this.Controls.Add(this.logFileLabel);
+            this.Controls.Add(this.logFileLinkLabel);
             this.Controls.Add(this.saveBtn);
             this.Controls.Add(this.rentalBtn);
             this.Controls.Add(this.ordersBtn);
@@ -265,6 +275,7 @@
         private Button rentalBtn;
         private Button saveBtn;
         private Button logoBtn;
-        private Button ticketsBtn;
+        private LinkLabel logFileLinkLabel;
+        private Label logFileLabel;
     }
 }

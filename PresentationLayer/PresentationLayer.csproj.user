@@ -40,8 +40,5 @@
     <Compile Update="RentalsPage.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="TicketResolve.cs">
-      <SubType>Form</SubType>
-    </Compile>
   </ItemGroup>
 </Project>

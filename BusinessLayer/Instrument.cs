@@ -17,6 +17,7 @@ namespace BusinessLayer {
         private const string INSERT_INSTRUMENT_PARTIAL = "INSERT INTO instrument (instrument_type, manufacturer, name, description, price_buy, rentable, quantity) VALUES (@type, @manufacturer, @name, @description, @priceBuy, @rentable, @quantity)";
         private const string UPDATE_INSTRUMENT_ALL = "UPDATE instrument SET instrument_type = @type, manufacturer = @manufacturer, name = @name, description = @description, price_buy = @priceBuy, price_rent = @priceRent, deposit = @deposit, rentable = @rentable, quantity = @quantity WHERE id = @id";
         private const string UPDATE_INSTRUMENT_PARITAL = "UPDATE instrument SET instrument_type = @type, manufacturer = @manufacturer, name = @name, description = @description, price_buy = @priceBuy, rentable = @rentable, quantity = @quantity WHERE id = @id";
+        private const string DELETE_INSTRUMENT = "DELETE FROM instrument WHERE id = @id";
         public int Id { get; set; }
         public string Type { get; set; }
         public string Manufacturer { get; set; } 
@@ -45,7 +46,16 @@ namespace BusinessLayer {
         }
 
         public void Delete(out string msg) {
-            msg = "this should not have happened (yet)"
+            using (SqlConnection conn = new SqlConnection(connectionString)) {
+                conn.Open();
+
+                using (SqlCommand cmd = new SqlCommand(DELETE_INSTRUMENT, conn)) {
+                    cmd.Parameters.AddWithValue("@id", Id);
+                    msg = "Successfully Deleted";
+                    Logger.Log(cmd.ExecuteNonQuery() + " Deleted rows");
+
+                }
+            }
         }
 
 
