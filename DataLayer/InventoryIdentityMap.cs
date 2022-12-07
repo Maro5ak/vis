@@ -11,7 +11,6 @@ namespace DataLayer {
     public class InventoryIdentityMap {
         private const string SELECT_QUERY = "SELECT i.id, i.instrument_type, i.manufacturer, i.name, i.description, i.price_buy, i.price_rent, i.deposit, i.quantity FROM instrument i WHERE i.id = @id";
         private const string SELECT_COUNT = "SELECT COUNT(id) FROM instrument";
-        //private const string 
         private readonly string connectionString;
         private Dictionary<int, DataRow> inventoryMap = new Dictionary<int, DataRow>();
 
@@ -63,10 +62,6 @@ namespace DataLayer {
                     else return 0;
                 }
             }
-        }
-
-        public void Update(int id) {
-
         }
 
     }

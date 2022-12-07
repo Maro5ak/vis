@@ -15,10 +15,7 @@ namespace PresentationLayer {
     public partial class CartPage : Form {
         private List<Instrument> orderItems = new List<Instrument>();
         public CartPage() {
-            InitializeComponent();
-
-            //orderList.Controls.Clear();
-
+            InitializeComponent()
             Cart.Customer = new Customer(Runtime.loggedIn);
 
             

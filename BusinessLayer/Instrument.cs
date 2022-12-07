@@ -6,6 +6,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Net;
 using System.Numerics;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -44,7 +45,7 @@ namespace BusinessLayer {
         }
 
         public void Delete(out string msg) {
-            throw new NotImplementedException();
+            msg = "this should not have happened (yet)"
         }
 
 

@@ -27,21 +27,11 @@ namespace PresentationLayer {
             }
             
             Runtime.loggedIn = customer.Id;
-            var frm = new InventoryUI();
-            frm.Location = this.Location;
-            frm.StartPosition = FormStartPosition.Manual;
-            frm.FormClosing += delegate { this.Close(); };
-            frm.Show();
-            this.Hide();
+            SceneManager.ChangeScene(this, new InventoryUI());
         }
 
         private void goBackBtn_Click(object sender, EventArgs e) {
-            var frm = new InventoryUI();
-            frm.Location = this.Location;
-            frm.StartPosition = FormStartPosition.Manual;
-            frm.FormClosing += delegate { this.Close(); };
-            frm.Show();
-            this.Hide();
+            SceneManager.ChangeScene(this, new LoginOrRegister());
         }
     }
 }
