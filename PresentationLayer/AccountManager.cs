@@ -8,6 +8,7 @@ namespace PresentationLayer {
         private string logFilePath = @"C:\Users\maros\source\repos\VIS\vis\ExternalLibraries\Log.txt";
         public AccountManager() {
             InitializeComponent();
+            SceneManager.InitState(this);
             logFileLinkLabel.Hide();
             logFileLabel.Hide();
 

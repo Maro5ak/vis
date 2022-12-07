@@ -16,6 +16,7 @@ namespace PresentationLayer {
         private List<Order> orders = new List<Order>();
         public OrdersPage() {
             InitializeComponent();
+            SceneManager.InitState(this);
             List<string> data = OrderDataGW.GetOrdersForUser(Runtime.loggedIn);
             orderList.ColumnCount = 1;
             int rowCount = orderList.RowCount = data.Count;

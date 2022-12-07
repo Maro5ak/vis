@@ -16,6 +16,7 @@ namespace PresentationLayer {
         private List<Instrument> orderItems = new List<Instrument>();
         public CartPage() {
             InitializeComponent();
+            SceneManager.InitState(this);
             Cart.Customer = new Customer(Runtime.loggedIn);
 
             

@@ -15,6 +15,7 @@ namespace PresentationLayer {
         Instrument currentInstrument;
         public InstrumentDetails(int id) {
             InitializeComponent();
+            SceneManager.InitState(this);
             currentInstrument = Inventory.inventoryMap[id];
             deleteInstrumentBtn.Visible = false;
             if (Runtime.privilegedMode)

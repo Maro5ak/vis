@@ -13,6 +13,7 @@ namespace PresentationLayer {
     public partial class OrderSuccess : Form {
         public OrderSuccess(int id) {
             InitializeComponent();
+            SceneManager.InitState(this);
             msgLabel.Text = $"Order {id} Successfully placed!";
         }
 

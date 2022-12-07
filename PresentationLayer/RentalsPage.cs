@@ -13,7 +13,8 @@ using System.Windows.Forms;
 namespace PresentationLayer {
     public partial class RentalsPage : Form {
         public RentalsPage() {
-            InitializeComponent(); 
+            InitializeComponent();
+            SceneManager.InitState(this);
             List<string> data = RentalDataGW.GetOrdersForUser(Runtime.loggedIn);
             rentalList.ColumnCount = 1;
             int rowCount = rentalList.RowCount = data.Count;

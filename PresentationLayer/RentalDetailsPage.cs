@@ -18,6 +18,7 @@ namespace PresentationLayer {
         int currentId;
         public RentalDetailsPage(int id) {
             InitializeComponent();
+            SceneManager.InitState(this);
             current = Rental.GetRental(id);
             currentId = id;
             rentalNameLabel.Text = Utils.Concat(current.Instrument.Manufacturer, current.Instrument.Name);

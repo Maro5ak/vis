@@ -14,6 +14,7 @@ namespace PresentationLayer {
     public partial class LoginPage : Form {
         public LoginPage() {
             InitializeComponent();
+            SceneManager.InitState(this);
         }
 
         private void goBackBtn_Click(object sender, EventArgs e) {

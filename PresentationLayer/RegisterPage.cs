@@ -14,6 +14,7 @@ namespace PresentationLayer {
     public partial class RegisterPage : Form {
         public RegisterPage() {
             InitializeComponent();
+            SceneManager.InitState(this);
         }
 
         private void registerBtn_Click(object sender, EventArgs e) {

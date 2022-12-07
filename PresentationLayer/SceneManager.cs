@@ -13,5 +13,11 @@ namespace PresentationLayer {
             newScene.Show();
             oldScene.Hide();
         }
+
+        public static void InitState<T>(T form) where T : Form {
+            form.FormBorderStyle = FormBorderStyle.FixedSingle;
+            form.MinimizeBox = false;
+            form.MaximizeBox = false;
+        }
     }
 }

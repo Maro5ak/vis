@@ -251,7 +251,9 @@
             this.Controls.Add(this.cartBtn);
             this.Controls.Add(this.profileBtn);
             this.Controls.Add(this.panel1);
+            this.MaximizeBox = false;
             this.Name = "AccountManager";
+            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.Text = "Account Manager";
             ((System.ComponentModel.ISupportInitialize)(this.profilePic)).EndInit();
             this.panel1.ResumeLayout(false);

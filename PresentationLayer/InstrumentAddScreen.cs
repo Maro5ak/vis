@@ -14,6 +14,7 @@ namespace PresentationLayer {
         private bool update = false;
         public InstrumentAddScreen() {
             InitializeComponent();
+            SceneManager.InitState(this);
             rentableCheck.Checked = false;
             rentPriceBox.Visible = false;
             depositBox.Visible = false;

@@ -19,7 +19,8 @@ namespace PresentationLayer {
         public InventoryUI() {
             Inventory.init();
             InitializeComponent();
-            
+            SceneManager.InitState(this);
+
             instrumentsManagerBtn.Visible = false;
             xmlBtn.Visible = false;
             xmlLinkLabel.Visible = false;

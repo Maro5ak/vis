@@ -12,6 +12,7 @@ namespace PresentationLayer {
     public partial class LoginOrRegister : Form {
         public LoginOrRegister() {
             InitializeComponent();
+            SceneManager.InitState(this);
         }
 
         private void loginPageBtn_Click(object sender, EventArgs e) {

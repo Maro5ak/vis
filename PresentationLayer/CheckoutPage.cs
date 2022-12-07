@@ -17,6 +17,7 @@ namespace PresentationLayer {
         private int paymentAddon, deliveryAddon;
         public CheckoutPage() {
             InitializeComponent();
+            SceneManager.InitState(this);
             Customer current = Cart.Customer;
             
             nameBox.Text = Utils.Concat(current.Firstname, current.Lastname);
