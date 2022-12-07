@@ -76,3 +76,5 @@
 [12/6/2022 8:25:56 PM]: 1 Insert into rental
 [12/6/2022 10:11:57 PM]: 1 Updated customer
 [12/6/2022 10:25:29 PM]: 1
+[12/7/2022 9:46:41 AM]: 0 Update payment
+[12/7/2022 9:46:41 AM]: 1 Extend rental date

@@ -7,7 +7,6 @@ using System.Threading.Tasks;
 namespace BusinessLayer {
     public class Admin : Customer, IPerson, IActiveRecord<Admin> {
         public bool IsAdmin { get; set; }
-        public List<Ticket> AssignedTickets { get; set; }
         public Admin(int id) : base(id) {
             IsAdmin = true;
         }

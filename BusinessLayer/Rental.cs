@@ -59,7 +59,8 @@ namespace BusinessLayer {
 
         public void ExtendReturnTime(int id) {
             EndTime = EndTime.AddMonths(1);
-           RentalDataGW.ExtendReturnTime(id, EndTime);
+            Payment.Update(out string msg);
+            RentalDataGW.ExtendReturnTime(id, EndTime);
         }
         public void ReturnRental() {
             RentalDataGW.DeleteRental(StartTime, EndTime, Penalty ? '1' : '2', Customer.Id, Instrument.Id, Customer.Address, Payment.Id);

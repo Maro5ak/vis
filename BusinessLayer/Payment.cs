@@ -20,6 +20,7 @@ namespace BusinessLayer {
         private const string GET_LAST_ID = "SELECT TOP 1 id FROM payment ORDER BY id DESC";
         private const string REMOVE_PAYMENT = "DELETE FROM payment WHERE id = @id";
         private const string SELECT_ID = "SELECT id, payment_method, amount FROM payment WHERE id = @id";
+        private const string UPDATE_PAYMENT = "UPDATE payment SET payment_method = @method, rental_or_order = @rentor, date = @date, amount = @amount WHERE id = @id";
         public enum PaymentMethodEnum {
             CARD,
             CASH,
@@ -136,7 +137,20 @@ namespace BusinessLayer {
         }
 
         public void Update(out string msg) {
-            throw new NotImplementedException();
+            using (SqlConnection conn = new SqlConnection(connectionString)) {
+                conn.Open();
+                using (SqlCommand cmd = new SqlCommand(UPDATE_PAYMENT, conn)) {
+                    cmd.Parameters.AddWithValue("@id", Id);
+                    cmd.Parameters.AddWithValue("@method", GetEnumString(PaymentMethod));
+                    cmd.Parameters.AddWithValue("@rentor", GetEnumString(ItemPayedFor));
+                    cmd.Parameters.AddWithValue("@date", Date);
+                    cmd.Parameters.AddWithValue("@amount", Amount);
+
+
+                    msg = "updated payment";
+                    Logger.Log(cmd.ExecuteNonQuery() + " Update payment");
+                }
+            }
         }
     }
 }

@@ -67,7 +67,7 @@ namespace DataLayer {
         }
 
         public static List<string> GetOrdersForUser(int id) {
-            string query = "SELECT r.id, i.name, i.instrument_type, i.manufacturer, CAST(r.start_date AS DATE), CAST(r.end_date AS DATE) ,p.amount, p.date\n" +
+            string query = "SELECT r.id, i.name, i.instrument_type, i.manufacturer, CAST(r.start_date AS DATE), CAST(r.end_date AS DATE) ,p.amount\n" +
             "FROM rental r\n" +
             "JOIN customer c ON r.customer_id = c.id\n" +
             "JOIN instrument i ON r.instrument_id = i.id\n" +
@@ -87,9 +87,8 @@ namespace DataLayer {
                         sb.Append(reader[3] + " ");
                         sb.Append(reader[1] + " | ");
                         sb.Append(reader[4] + " - ");
-                        sb.Append(reader[5] + " | ");
-                        sb.Append("$" + reader[6] + " ");
-                        sb.Append(reader[7]);
+                        sb.Append(reader[5] + " |    ");
+                        sb.Append("$" + reader[6]);
 
                         data.Add(sb.ToString());
                     }

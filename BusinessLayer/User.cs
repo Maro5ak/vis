@@ -11,7 +11,7 @@ using System.Net.Mail;
 namespace BusinessLayer {
     public class User : IPerson, IActiveRecord<User>{
         private const string SELECT_LAST_ID = "SELECT TOP 1 id FROM customer ORDER BY id DESC";
-        private const string SELECT_VALIDATION = "SELECT id, isAdmin FROM customer WHERE email = @email AND password = @password";
+        private const string SELECT_VALIDATION = "SELECT id, password, isAdmin FROM customer WHERE email = @email";
 
         public string Email { get; set; }
         public string Password { get; set; }
@@ -45,14 +45,18 @@ namespace BusinessLayer {
                 conn.Open();
                 using (SqlCommand cmd = new SqlCommand(SELECT_VALIDATION, conn)) {
                     cmd.Parameters.AddWithValue("@email", Email);
-                    cmd.Parameters.AddWithValue("@password", Password);
                     SqlDataReader reader = cmd.ExecuteReader();
                     reader.Read();
                     if (reader.HasRows) {
                         id = (int)reader[0];
-                        if (DBNull.Value != reader[1] && (string)reader[1] == "1") {
+                        if(DBNull.Value != reader[1] && Password != (string)reader[1]) {
+                            errorMsg = "Incorrect Email or Password";
+                            return false;
+                        }
+                        if (DBNull.Value != reader[2] && (string)reader[2] == "1") {
                             Runtime.privilegedMode = true;
                         }
+                        
                         return true;
                     }
                 }
@@ -62,12 +66,12 @@ namespace BusinessLayer {
         }
 
         public virtual void Delete(out string msg) {
-            msg = "";
+            msg = "this should not have happened";
             return;
         }
 
         public virtual void Insert(out string msg) {
-            msg = "";
+            msg = "this should not have happened";
             return;
         }
         private int GetLastIdUsed() {
@@ -92,7 +96,7 @@ namespace BusinessLayer {
         }
 
         public virtual void Update(out string msg) {
-            msg = "";
+            msg = "this should not have happened";
             return;
         }
     }
