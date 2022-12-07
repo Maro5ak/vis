@@ -12,3 +12,14 @@ Použité Vzory:
  - Foreign Key Mapping
  - Single Table Inheritance
  - Identity Field
+
+Use Cases:
+
+- Login
+- Registrace
+- Přidání/Odebrání nástrojů
+- Tvorba Objednávek
+- Tvorba Vypůjček
+- Správa uživatelských účtů
+- Logging Změn
+- Export dat do XML
